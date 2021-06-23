@@ -15,10 +15,10 @@
   <entry>
     <title>Markdown学习笔记1</title>
     <url>/2021/06/24/Markdown%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01/</url>
-    <content><![CDATA[<p>学习笔记第二篇————十个基本语法。<br></p>
+    <content><![CDATA[<p>学习笔记第1篇————10个基本语法。</p>
 <span id="more"></span>
 
-<h1 id="标题语法"><a href="#标题语法" class="headerlink" title="标题语法"></a>标题语法</h1><p>语法：通过添加“#”来实现标题。<br></p>
+<h1 id="标题语法"><a href="#标题语法" class="headerlink" title="标题语法"></a>标题语法</h1><p>语法：通过添加“#”来实现标题。</p>
 <table>
 <thead>
 <tr>
@@ -35,8 +35,8 @@
 <td><font size=2>六级标题</font></td>
 </tr>
 </tbody></table>
-<p>注意：“#”后需要添加一个空格。<br><br>注意：共有6级标题。</p>
-<h1 id="段落语法"><a href="#段落语法" class="headerlink" title="段落语法"></a>段落语法</h1><p>通过添加一行空白行来开始下一段。<br></p>
+<p>注意：“#”后需要添加一个空格。<br>注意：共有6级标题。</p>
+<h1 id="段落语法"><a href="#段落语法" class="headerlink" title="段落语法"></a>段落语法</h1><p>通过添加一行空白行来开始下一段。</p>
 <table>
 <thead>
 <tr>
@@ -45,12 +45,12 @@
 </tr>
 </thead>
 <tbody><tr>
-<td><code>段1行1&lt;br&gt;</code><br><code>段1行2&lt;br&gt;</code><br><br><code>段2行1&lt;br&gt;</code><br><code>段2行2</code></td>
+<td><code>段1行1　</code><br><code>段1行2</code><br><br><code>段2行1　</code><br><code>段2行2</code></td>
 <td><p>段1行1<br>段1行2</p>段2行1<br>段2行2</td>
 </tr>
 </tbody></table>
-<p>注意：不要用空格（spaces）或制表符（tabs）缩进段落（官方说的，应该是嫌不好看）。<br></p>
-<h1 id="换行语法"><a href="#换行语法" class="headerlink" title="换行语法"></a>换行语法</h1><p>行尾添加“结尾空格（在一行的末尾添加两个或多个空格）”，或添加<code>&lt;br&gt;</code>。<br></p>
+<p>注意：不要用空格（spaces）或制表符（tabs）缩进段落（官方说的，应该是嫌不好看）。</p>
+<h1 id="换行语法"><a href="#换行语法" class="headerlink" title="换行语法"></a>换行语法</h1><p>行尾添加“结尾空格（在一行的末尾添加两个或多个空格）”，或添加<code>&lt;br&gt;</code>。</p>
 <table>
 <thead>
 <tr>
@@ -67,7 +67,7 @@
 <td>行尾添加代码。<br>实现换行。</td>
 </tr>
 </tbody></table>
-<h2 id="换段和换行的区别"><a href="#换段和换行的区别" class="headerlink" title="换段和换行的区别"></a>换段和换行的区别</h2><p>段与段之间是段间距，行与行之间是行间距。<br></p>
+<h2 id="换段和换行的区别"><a href="#换段和换行的区别" class="headerlink" title="换段和换行的区别"></a>换段和换行的区别</h2><p>段与段之间是段间距，行与行之间是行间距。</p>
 <table>
 <thead>
 <tr>
@@ -84,7 +84,10 @@
 <td><p>这是第1段的第1行。<br>这是第1段的第2行。</p><p>这是第2段的第1行。<br>这是第2段的第2行。</p></td>
 </tr>
 </tbody></table>
-<h1 id="未完成，进度20-。"><a href="#未完成，进度20-。" class="headerlink" title="未完成，进度20%。"></a>未完成，进度20%。<br></h1>]]></content>
+<h1 id="未完成，进度20"><a href="#未完成，进度20" class="headerlink" title="未完成，进度20%"></a>未完成，进度20%</h1><h2 id="测试部分"><a href="#测试部分" class="headerlink" title="测试部分"></a>测试部分</h2><h3 id="分行测试"><a href="#分行测试" class="headerlink" title="分行测试"></a>分行测试</h3><p>11111<br>11111</p>
+<h3 id="段间距行间距测试"><a href="#段间距行间距测试" class="headerlink" title="段间距行间距测试"></a>段间距行间距测试</h3><p>11111<br>11111<br>11111</p>
+<p>11111<br>11111<br>11111</p>
+]]></content>
       <categories>
         <category>Markdown</category>
       </categories>
