@@ -92,4 +92,37 @@
         <tag>test</tag>
       </tags>
   </entry>
+  <entry>
+    <title>Qtranslate</title>
+    <url>/2021/06/24/QTranslate/</url>
+    <content><![CDATA[<p>介绍翻译工具Qtranslate的用法（复制于软件介绍）</p>
+<span id="more"></span>
+
+<p>QTranslate 版本 6.8.0.1</p>
+<p>全局快捷键（默认值）：<br>双击Ctrl =&gt; 显示主窗口（以及选定文本的译文）<br>Ctrl+Q =&gt; 翻译选定文本并显示在弹出窗口<br>Ctrl+Shift+Q =&gt; 显示词典窗口<br>Ctrl+E =&gt; 朗读选定文本</p>
+<p>主窗口快捷键：<br>Ctrl+Enter =&gt; 翻译文本<br>Ctrl+N =&gt; 清除当前翻译<br>Ctrl+D =&gt; 显示词典<br>Ctrl+Alt+1..9 =&gt; 用选定的第1<del>9个翻译服务显示词典<br>Ctrl+H =&gt; 显示翻译历史记录<br>Ctrl+K =&gt; 显示软键盘<br>Ctrl+Tab/Ctrl+Shift+Tab/Ctrl+1..9 =&gt; 切换到后一个/前一个/第1</del>9个翻译服务<br>Shift+Esc =&gt; 重设语言组合为自动检测<br>Ctrl+Shift+1..9 =&gt; 选择语言组合<br>Ctrl+I =&gt; 互换翻译方向<br>Ctrl+空格 =&gt; 显示 建议/自动完成 下拉菜单<br>F1 =&gt; 显示帮助<br>F11 =&gt; 打开/关闭全屏模式<br>Alt+左箭头 =&gt; 转到前一个翻译<br>Alt+右箭头 =&gt; 转到后一个翻译<br>Ctrl+上箭头 =&gt; 把翻译复制到文本输入框</p>
+<p>有三种鼠标选中文本的翻译模式：</p>
+<ol>
+<li>显示图标（选择程序中的文本 - 本程序的图标会出现在鼠标指针附近。点击该图标，弹出窗口里就会显示选定文本的译文）；</li>
+<li>显示翻译（选择程序中的文本 - 选定文本的译文会立即在弹出窗口中出现）。</li>
+<li>显示翻译并朗读（前一种加上朗读选定的文本）。</li>
+</ol>
+<p>操作：</p>
+<ul>
+<li>左键单击系统托盘里的程序图标，可启用/关闭鼠标选择模式（见上文）；</li>
+<li>左键双击系统托盘里的程序图标会显示主窗口；</li>
+<li>左键双击弹出窗口顶部会打开包含当前翻译的主窗口；</li>
+<li>左键单击翻译服务提供商的名称会切换服务提供商并重新翻译文本；</li>
+<li>中键单击翻译服务提供商的名称会在浏览器打开翻译服务网页；</li>
+<li>右键单击翻译服务提供商的名称可以多选服务，这样一来可以同时获取不同服务提供商的翻译结果，方便比较。</li>
+</ul>
+]]></content>
+      <categories>
+        <category>工具</category>
+      </categories>
+      <tags>
+        <tag>工具</tag>
+        <tag>翻译</tag>
+      </tags>
+  </entry>
 </search>
