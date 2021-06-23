@@ -1,6 +1,116 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>test0623</title>
+    <url>/2021/06/23/test0623/</url>
+    <content><![CDATA[<p>置顶功能测试</p>
+<span id="more"></span>
+
+<p>第1次测试</p>
+]]></content>
+      <tags>
+        <tag>test</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Qtranslate</title>
+    <url>/2021/06/24/QTranslate/</url>
+    <content><![CDATA[<p>介绍翻译工具Qtranslate的用法（复制于软件介绍）</p>
+<span id="more"></span>
+
+<p>QTranslate 版本 6.8.0.1</p>
+<p>全局快捷键（默认值）：<br>双击Ctrl =&gt; 显示主窗口（以及选定文本的译文）<br>Ctrl+Q =&gt; 翻译选定文本并显示在弹出窗口<br>Ctrl+Shift+Q =&gt; 显示词典窗口<br>Ctrl+E =&gt; 朗读选定文本</p>
+<p>主窗口快捷键：<br>Ctrl+Enter =&gt; 翻译文本<br>Ctrl+N =&gt; 清除当前翻译<br>Ctrl+D =&gt; 显示词典<br>Ctrl+Alt+1..9 =&gt; 用选定的第1<del>9个翻译服务显示词典<br>Ctrl+H =&gt; 显示翻译历史记录<br>Ctrl+K =&gt; 显示软键盘<br>Ctrl+Tab/Ctrl+Shift+Tab/Ctrl+1..9 =&gt; 切换到后一个/前一个/第1</del>9个翻译服务<br>Shift+Esc =&gt; 重设语言组合为自动检测<br>Ctrl+Shift+1..9 =&gt; 选择语言组合<br>Ctrl+I =&gt; 互换翻译方向<br>Ctrl+空格 =&gt; 显示 建议/自动完成 下拉菜单<br>F1 =&gt; 显示帮助<br>F11 =&gt; 打开/关闭全屏模式<br>Alt+左箭头 =&gt; 转到前一个翻译<br>Alt+右箭头 =&gt; 转到后一个翻译<br>Ctrl+上箭头 =&gt; 把翻译复制到文本输入框</p>
+<p>有三种鼠标选中文本的翻译模式：</p>
+<ol>
+<li>显示图标（选择程序中的文本 - 本程序的图标会出现在鼠标指针附近。点击该图标，弹出窗口里就会显示选定文本的译文）；</li>
+<li>显示翻译（选择程序中的文本 - 选定文本的译文会立即在弹出窗口中出现）。</li>
+<li>显示翻译并朗读（前一种加上朗读选定的文本）。</li>
+</ol>
+<p>操作：</p>
+<ul>
+<li>左键单击系统托盘里的程序图标，可启用/关闭鼠标选择模式（见上文）；</li>
+<li>左键双击系统托盘里的程序图标会显示主窗口；</li>
+<li>左键双击弹出窗口顶部会打开包含当前翻译的主窗口；</li>
+<li>左键单击翻译服务提供商的名称会切换服务提供商并重新翻译文本；</li>
+<li>中键单击翻译服务提供商的名称会在浏览器打开翻译服务网页；</li>
+<li>右键单击翻译服务提供商的名称可以多选服务，这样一来可以同时获取不同服务提供商的翻译结果，方便比较。</li>
+</ul>
+]]></content>
+      <categories>
+        <category>工具</category>
+      </categories>
+      <tags>
+        <tag>工具</tag>
+        <tag>翻译</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Markdown学习笔记2</title>
+    <url>/2021/06/23/Markdown%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B02/</url>
+    <content><![CDATA[<p>学习笔记第二篇————十个基本语法。<br></p>
+<span id="more"></span>
+
+<h1 id="1-标题语法"><a href="#1-标题语法" class="headerlink" title="1 标题语法"></a>1 标题语法</h1><p>语法：通过添加“#”来实现标题。<br></p>
+<table>
+<thead>
+<tr>
+<th><center>Markdown语法</center></th>
+<th><center>预览效果</center></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>## 二级标题</code></td>
+<td><font face="SimHei" size=5><strong>二级标题</strong></font></td>
+</tr>
+<tr>
+<td><code>###### 六级标题</code></td>
+<td><font face="SimHei" size=3><strong>六级标题</strong></font></td>
+</tr>
+</tbody></table>
+<p>注意：“#”后需要添加一个空格。<br><br>注意：共有6级标题。</p>
+<h1 id="2-段落语法"><a href="#2-段落语法" class="headerlink" title="2 段落语法"></a>2 段落语法</h1><p>通过添加一行空白行来开始下一段。<br></p>
+<table>
+<thead>
+<tr>
+<th><center>Markdown语法</center></th>
+<th><center>预览效果</center></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>段1行1&lt;br&gt;</code><br><code>段1行2&lt;br&gt;</code><br><br><code>段2行1&lt;br&gt;</code><br><code>段2行2</code></td>
+<td><p>段1行1<br>段1行2</p>段2行1<br>段2行2</td>
+</tr>
+</tbody></table>
+<p>注意：不要用空格（spaces）或制表符（tabs）缩进段落（官方说的，应该是嫌不好看）。<br></p>
+<h1 id="3-换行语法"><a href="#3-换行语法" class="headerlink" title="3 换行语法"></a>3 换行语法</h1><p>行尾添加“结尾空格（在一行的末尾添加两个或多个空格）”，或添加<code>&lt;br&gt;</code>。<br></p>
+<table>
+<thead>
+<tr>
+<th><center>Markdown语法</center></th>
+<th><center>预览效果</center></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code> 结尾空格。　</code><br><code>实现换行。</code></td>
+<td>注意换行空格。<br>实现换行。</td>
+</tr>
+<tr>
+<td><code>行尾添加代码。&lt;br&gt;</code><br><code>实现换行。</code></td>
+<td>行尾添加代码。<br>实现换行。</td>
+</tr>
+</tbody></table>
+<h2 id="换段和换行的区别"><a href="#换段和换行的区别" class="headerlink" title="换段和换行的区别"></a>换段和换行的区别</h2><p>段与段之间是段间距，行与行之间是行间距。<br><br>|  |  |<br>| — | — |<br>| 换行 | 这是第1行。<br>这是第2行。 |<br>| 换段 | <p>这是第1段的第1行。<br>这是第1段的第2行。</p><p>这是第2段的第1行。<br>这是第2段的第2行。</p> |</p>
+<p>未完成，进度20%。</p>
+]]></content>
+      <categories>
+        <category>Markdown</category>
+      </categories>
+      <tags>
+        <tag>Markdown</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Markdown的简单学习</title>
     <url>/2021/06/23/markdown/</url>
     <content><![CDATA[<h1 id="一级标题"><a href="#一级标题" class="headerlink" title="一级标题"></a>一级标题</h1><span id="more"></span>
@@ -47,6 +157,19 @@
       </tags>
   </entry>
   <entry>
+    <title>test0622</title>
+    <url>/2021/06/23/test0622/</url>
+    <content><![CDATA[<p>hexo是一个快速、简洁且高效的博客框架</p>
+<span id="more"></span>
+
+<p>第1次测试</p>
+<p>第2次测试</p>
+]]></content>
+      <tags>
+        <tag>test</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hello World</title>
     <url>/2021/06/22/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! </p>
@@ -66,63 +189,5 @@
 
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 ]]></content>
-  </entry>
-  <entry>
-    <title>test0623</title>
-    <url>/2021/06/23/test0623/</url>
-    <content><![CDATA[<p>置顶功能测试</p>
-<span id="more"></span>
-
-<p>第1次测试</p>
-]]></content>
-      <tags>
-        <tag>test</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>test0622</title>
-    <url>/2021/06/23/test0622/</url>
-    <content><![CDATA[<p>hexo是一个快速、简洁且高效的博客框架</p>
-<span id="more"></span>
-
-<p>第1次测试</p>
-<p>第2次测试</p>
-]]></content>
-      <tags>
-        <tag>test</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Qtranslate</title>
-    <url>/2021/06/24/QTranslate/</url>
-    <content><![CDATA[<p>介绍翻译工具Qtranslate的用法（复制于软件介绍）</p>
-<span id="more"></span>
-
-<p>QTranslate 版本 6.8.0.1</p>
-<p>全局快捷键（默认值）：<br>双击Ctrl =&gt; 显示主窗口（以及选定文本的译文）<br>Ctrl+Q =&gt; 翻译选定文本并显示在弹出窗口<br>Ctrl+Shift+Q =&gt; 显示词典窗口<br>Ctrl+E =&gt; 朗读选定文本</p>
-<p>主窗口快捷键：<br>Ctrl+Enter =&gt; 翻译文本<br>Ctrl+N =&gt; 清除当前翻译<br>Ctrl+D =&gt; 显示词典<br>Ctrl+Alt+1..9 =&gt; 用选定的第1<del>9个翻译服务显示词典<br>Ctrl+H =&gt; 显示翻译历史记录<br>Ctrl+K =&gt; 显示软键盘<br>Ctrl+Tab/Ctrl+Shift+Tab/Ctrl+1..9 =&gt; 切换到后一个/前一个/第1</del>9个翻译服务<br>Shift+Esc =&gt; 重设语言组合为自动检测<br>Ctrl+Shift+1..9 =&gt; 选择语言组合<br>Ctrl+I =&gt; 互换翻译方向<br>Ctrl+空格 =&gt; 显示 建议/自动完成 下拉菜单<br>F1 =&gt; 显示帮助<br>F11 =&gt; 打开/关闭全屏模式<br>Alt+左箭头 =&gt; 转到前一个翻译<br>Alt+右箭头 =&gt; 转到后一个翻译<br>Ctrl+上箭头 =&gt; 把翻译复制到文本输入框</p>
-<p>有三种鼠标选中文本的翻译模式：</p>
-<ol>
-<li>显示图标（选择程序中的文本 - 本程序的图标会出现在鼠标指针附近。点击该图标，弹出窗口里就会显示选定文本的译文）；</li>
-<li>显示翻译（选择程序中的文本 - 选定文本的译文会立即在弹出窗口中出现）。</li>
-<li>显示翻译并朗读（前一种加上朗读选定的文本）。</li>
-</ol>
-<p>操作：</p>
-<ul>
-<li>左键单击系统托盘里的程序图标，可启用/关闭鼠标选择模式（见上文）；</li>
-<li>左键双击系统托盘里的程序图标会显示主窗口；</li>
-<li>左键双击弹出窗口顶部会打开包含当前翻译的主窗口；</li>
-<li>左键单击翻译服务提供商的名称会切换服务提供商并重新翻译文本；</li>
-<li>中键单击翻译服务提供商的名称会在浏览器打开翻译服务网页；</li>
-<li>右键单击翻译服务提供商的名称可以多选服务，这样一来可以同时获取不同服务提供商的翻译结果，方便比较。</li>
-</ul>
-]]></content>
-      <categories>
-        <category>工具</category>
-      </categories>
-      <tags>
-        <tag>工具</tag>
-        <tag>翻译</tag>
-      </tags>
   </entry>
 </search>
