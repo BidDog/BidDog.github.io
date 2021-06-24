@@ -15,7 +15,7 @@
   <entry>
     <title>Markdown学习笔记1</title>
     <url>/2021/06/24/Markdown%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01/</url>
-    <content><![CDATA[<p>学习笔记第1篇————10个基本语法。</p>
+    <content><![CDATA[<p>第1篇————基本语法。</p>
 <span id="more"></span>
 
 <h1 id="标题语法"><a href="#标题语法" class="headerlink" title="标题语法"></a>标题语法</h1><p>语法：通过添加“#”来实现标题。</p>
@@ -84,9 +84,142 @@
 <td><p>这是第1段的第1行。<br>这是第1段的第2行。</p><p>这是第2段的第1行。<br>这是第2段的第2行。</p></td>
 </tr>
 </tbody></table>
-<h1 id="未完成，进度20"><a href="#未完成，进度20" class="headerlink" title="未完成，进度20%"></a>未完成，进度20%</h1><h2 id="测试部分"><a href="#测试部分" class="headerlink" title="测试部分"></a>测试部分</h2><h3 id="分行测试"><a href="#分行测试" class="headerlink" title="分行测试"></a>分行测试</h3><p>11111<br>11111</p>
-<h3 id="段间距行间距测试"><a href="#段间距行间距测试" class="headerlink" title="段间距行间距测试"></a>段间距行间距测试</h3><p>11111<br>11111<br>11111</p>
-<p>11111<br>11111<br>11111</p>
+<h1 id="强调语法"><a href="#强调语法" class="headerlink" title="强调语法"></a>强调语法</h1><p>即将通过添加不同数量的<code>*</code>，将文本设置为粗体或斜体。</p>
+<table>
+<thead>
+<tr>
+<th><center>Markdown语法</center></th>
+<th><center>预览效果</center></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>**粗体**：你**好**啊</code></td>
+<td><strong>粗体</strong>：你<strong>好</strong>啊</td>
+</tr>
+<tr>
+<td><code>*斜体*：你*好*啊</code></td>
+<td><em>斜体</em>：你<em>好</em>啊</td>
+</tr>
+<tr>
+<td><code>***粗体+斜体***：你***好***啊</code></td>
+<td><em><strong>粗体+斜体</strong></em>：你<em><strong>好</strong></em>啊</td>
+</tr>
+</tbody></table>
+<h1 id="引用语法"><a href="#引用语法" class="headerlink" title="引用语法"></a>引用语法</h1><p>段落前添加<code>&gt;</code>，以创建块引用。</p>
+<h2 id="单个段落"><a href="#单个段落" class="headerlink" title="单个段落"></a>单个段落</h2><p>Markdown语法示例：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&gt;你好啊，我是赛利亚  </span><br><span class="line">滚，我是哥布林</span><br></pre></td></tr></table></figure>
+<p>注意：示例的第一句结尾有用于换行的结尾空格，下同。</p>
+<p>预览效果：</p>
+<blockquote>
+<p>你好啊，我是赛利亚。<br>滚，我是哥布林。</p>
+</blockquote>
+<h2 id="多个段落"><a href="#多个段落" class="headerlink" title="多个段落"></a>多个段落</h2><p>段落之间的空白行添加<code>&gt;</code>。</p>
+<p>Markdown语法示例：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&gt;你好啊，我是赛利亚。  </span><br><span class="line">滚，我是哥布林。</span><br><span class="line">&gt;</span><br><span class="line">&gt;好小子，敢凶我，老娘要叫人了。  </span><br><span class="line">叫，我哥布林怕过谁。</span><br></pre></td></tr></table></figure>
+
+<p>预览效果：</p>
+<blockquote>
+<p>你好啊，我是赛利亚。<br>滚，我是哥布林。</p>
+<p>好小子，敢凶我，老娘要叫人了。<br>叫，我哥布林怕过谁。</p>
+</blockquote>
+<h2 id="嵌套"><a href="#嵌套" class="headerlink" title="嵌套"></a>嵌套</h2><p>需要嵌套的段落多加一个<code>&gt;</code>，即<code>&gt;&gt;</code>。</p>
+<p>Markdown语法示例：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&gt;你好啊，我是赛利亚。  </span><br><span class="line">滚，我是哥布林。</span><br><span class="line">&gt;</span><br><span class="line">&gt;好小子，敢凶我，老娘要叫人了。  </span><br><span class="line">叫，我哥布林怕过谁。</span><br><span class="line">&gt;&gt;李布林说过：狭路相逢勇者胜！</span><br><span class="line">&gt;</span><br><span class="line">&gt;第二天，医院里多出了两位病人，一个叫神枪手，一个叫鬼剑士。</span><br></pre></td></tr></table></figure>
+
+<p>示例效果：</p>
+<blockquote>
+<p>你好啊，我是赛利亚。<br>滚，我是哥布林。</p>
+<p>好小子，敢凶我，老娘要叫人了。<br>叫，我哥布林怕过谁。</p>
+<blockquote>
+<p>李布林说过：狭路相逢勇者胜！</p>
+</blockquote>
+<p>第二天，医院里多出了两位病人，一个叫神枪手，一个叫鬼剑士。</p>
+</blockquote>
+<h2 id="块引用中使用Markdown的其他元素"><a href="#块引用中使用Markdown的其他元素" class="headerlink" title="块引用中使用Markdown的其他元素"></a>块引用中使用Markdown的其他元素</h2><p>如添加粗体、斜体、标题、代码等。</p>
+<p>Markdown语法示例：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&gt;#### 哥傲天 第一章</span><br><span class="line">&gt;</span><br><span class="line">&gt;你好啊，我是***赛利亚***。  </span><br><span class="line">滚，我是`哥布林`。</span><br></pre></td></tr></table></figure>
+
+<p>示例效果：</p>
+<blockquote>
+<h4 id="哥傲天-第一章"><a href="#哥傲天-第一章" class="headerlink" title="哥傲天 第一章"></a>哥傲天 第一章</h4><p>你好啊，我是<em><strong>赛利亚</strong></em>。<br>滚，我是<code>哥布林</code>。</p>
+</blockquote>
+<h1 id="列表语法"><a href="#列表语法" class="headerlink" title="列表语法"></a>列表语法</h1><p>分为有序列表和无序列表。</p>
+<h2 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h2><p>通过“数字+<code>.</code>+空格”实现,通过<code>Tab</code>缩进实现子列表。<br>| <center>Markdown语法</center> | <center>预览效果 |<br>| — | — |<br>| <code>1. 第一项</code><br><code>2. 第二项</code><br><code>　　1. 子项一</code><br><code>　　2. 子项二</code><br><code>3. 第三项</code> | 1.第一项<br>2.第二项<br>　　1.子项一<br>　　2.子项二<br>3.第三项 |</p>
+<h2 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h2><p>通过<code>-</code>、<code>*</code>、<code>+</code>实现，操作同有序列表类似。<br>| <center>Markdown语法</center> | <center>预览效果 |<br>| — | — |<br>| <code>- 拿起筷子</code><br><code>　　- 眼看见筷子</code><br><code>　　- 手拿起筷子</code><br><code>- 夹菜</code><br><code>- 将菜放进嘴里</code> | • 拿起筷子<br>　　• 眼看见筷子<br>　　• 手拿起筷子<br>• 夹菜<br>• 将菜放进嘴里 |</p>
+<p>注意：在使用时，不要将<code>-</code>、<code>*</code>、<code>+</code>混合在一起使用（原因可能是改变符号算是换段）。</p>
+<h2 id="列表中嵌套其他元素"><a href="#列表中嵌套其他元素" class="headerlink" title="列表中嵌套其他元素"></a>列表中嵌套其他元素</h2><p>保留列表连续性的同时，嵌套其他元素，该元素前添加4个空格（相当于1个<code>Tab</code>），不同元素间需用空白行分开。</p>
+<p>Markdown示例：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">- 做饭，吃饭</span><br><span class="line">- 洗筷，刷碗</span><br><span class="line"></span><br><span class="line">     &gt; 不做饭的人去洗碗，天经地义。————哥布迅</span><br><span class="line"></span><br><span class="line">- 把碗放到柜子里</span><br><span class="line">- 休息</span><br></pre></td></tr></table></figure>
+
+<p>示例效果：</p>
+<ul>
+<li><p>做饭，吃饭</p>
+</li>
+<li><p>洗筷，刷碗</p>
+<blockquote>
+<p>不做饭的人去洗碗，天经地义。————哥布迅</p>
+</blockquote>
+</li>
+<li><p>把碗放到柜子里</p>
+</li>
+<li><p>休息</p>
+</li>
+</ul>
+<p>上面列出了嵌套引用元素的示例，段落、图片、无需列表、围栏代码块用法同理。</p>
+<h1 id="代码语法"><a href="#代码语法" class="headerlink" title="代码语法"></a>代码语法</h1><p>通过<code>`</code>实现。</p>
+<h2 id="词汇或短句"><a href="#词汇或短句" class="headerlink" title="词汇或短句"></a>词汇或短句</h2><p>将文本放入<code>``</code>中即可。<br>| <center>Markdown语法</center> | <center>示例效果</center> |<br>| — | — |<br>| <code> 上传blog的指令是`-hexo d -g`。</code> | 上传blog的指令是<code>-hexo d -g</code> |</p>
+<h2 id="代码块"><a href="#代码块" class="headerlink" title="代码块"></a>代码块</h2><p>个人喜欢使用围栏代码块，通过<code>``` ```</code>实现，另一种方法是每一行前缩进至少4个空格。<br>| <center>Markdown语法</center> | <center>示例效果</center> |<br>| — | — |<br>| <code>```</code><br><code>-hexo g</code><br><code>-hexo d</code><br><code>```</code> | <code>-hexo g</code><br><code>-hexo d</code> |</p>
+<h1 id="分割线语法"><a href="#分割线语法" class="headerlink" title="分割线语法"></a>分割线语法</h1><p>通过<code>***</code>、<code>---</code>、<code>___</code>实现。同时，为了兼容性，在分割线的前后均添加空白行。</p>
+<p>Markdown语法示例：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">---</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>示例效果：</p>
+<hr>
+<h1 id="链接语法"><a href="#链接语法" class="headerlink" title="链接语法"></a>链接语法</h1><p>添加链接或网址。</p>
+<h2 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h2><p>格式：<code>[超链接显示名](超链接地址 &quot;超链接标题&quot;)</code>，其中“超链接显示名”是该链接在文章中实际显示的文本内容，“超链接标题”是鼠标悬停在链接上时显示的内容。</p>
+<p>Markdown代码示例：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">学习Markdown请参考 [Markdown基本语法](https://markdown.com.cn/basic-syntax/ &quot;Markdown语法入门&quot;) 。</span><br></pre></td></tr></table></figure>
+
+<p>示例预览：<br>学习Markdown请参考 <a href="https://markdown.com.cn/basic-syntax/" title="Markdown语法入门">Markdown基本语法</a> 。</p>
+<h3 id="格式化"><a href="#格式化" class="headerlink" title="格式化"></a>格式化</h3><p>可以将超链接文本切换为粗体、斜体或代码。</p>
+<p>Markdown代码示例1：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">学习Markdown请参考 ***[Markdown基本语法](https://markdown.com.cn/basic-syntax/ &quot;Markdown语法入门&quot;)*** 。</span><br></pre></td></tr></table></figure>
+
+<p>示例1预览：<br>学习Markdown请参考 <em><strong><a href="https://markdown.com.cn/basic-syntax/" title="Markdown语法入门">Markdown基本语法</a></strong></em> 。</p>
+<p>Markdown代码示例2：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">学习Markdown请参考 [`Markdown基本语法`](https://markdown.com.cn/basic-syntax/ &quot;Markdown语法入门&quot;) 。</span><br></pre></td></tr></table></figure>
+
+<p>示例2预览：<br>学习Markdown请参考 <a href="https://markdown.com.cn/basic-syntax/" title="Markdown语法入门"><code>Markdown基本语法</code></a> 。</p>
+<h2 id="网址和Email地址"><a href="#网址和Email地址" class="headerlink" title="网址和Email地址"></a>网址和Email地址</h2><p>通过<code>&lt;&gt;</code>把URL变为可点击的链接。</p>
+<p>Markdown代码示例：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">这是Markdown语法教程的地址： &lt;https://markdown.com.cn&gt; 。</span><br></pre></td></tr></table></figure>
+
+<p>示例预览：<br>这是Markdown语法教程的地址： &lt;<a href="https://markdown.com.cn/">https://markdown.com.cn</a> &gt; 。</p>
+<h1 id="图片语法"><a href="#图片语法" class="headerlink" title="图片语法"></a>图片语法</h1><h2 id="插入本地图片"><a href="#插入本地图片" class="headerlink" title="插入本地图片"></a>插入本地图片</h2><p>格式：<code>![替代文本](图片的相对路径 &quot;图片标题&quot;)</code>，其中“替代文本”是图片失效时用于代替图片的文字，“图片标题”是鼠标悬停在图片上方时显示的文本。</p>
+<p>Markdown代码示例：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">![测试：插入本地图片](.\\IMG\\Test\test.png &quot;测试：插入本地图片&quot;)</span><br></pre></td></tr></table></figure>
+
+<p>示例预览：<br><img src=".%5CIMG%5CTest%5Ctest.png" alt="测试：插入本地图片" title="测试：插入本地图片"></p>
+<h2 id="图片链接"><a href="#图片链接" class="headerlink" title="图片链接"></a>图片链接</h2><p>可以给图片增加链接，格式：<code>[![替代文本](图片的相对路径 &quot;图片标题&quot;)](超链接地址)</code>。</p>
+<h1 id="转义字符语法"><a href="#转义字符语法" class="headerlink" title="转义字符语法"></a>转义字符语法</h1><p>要显示原本用于控制文本格式的的字符（如无序列表的<code>-</code>和引用的<code>&gt;</code>），需在字符前添加<code>\</code>。</p>
+<p>Markdown代码示例：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&gt; 上山打老虎！</span><br><span class="line"></span><br><span class="line">\&gt; 打到小松鼠！</span><br></pre></td></tr></table></figure>
+
+<p>示例预览：</p>
+<blockquote>
+<p>上山打老虎！</p>
+</blockquote>
+<p>&gt; 打到小松鼠！</p>
+<p>如果没有<code>\</code>，那么<code>&gt;</code>不会被显示，且“打到小松鼠！”将处于引用格式。</p>
+<h2 id="特殊字符自动转义"><a href="#特殊字符自动转义" class="headerlink" title="特殊字符自动转义"></a>特殊字符自动转义</h2><p>两个字符<code>&lt;</code>和<code>&amp;</code>，详情请查看 <a href="https://markdown.com.cn/basic-syntax/escaping-characters.html" title="该页面下方有介绍“特殊字符转义”">特殊字符转义</a> 。</p>
+<h1 id="内嵌HTML标签"><a href="#内嵌HTML标签" class="headerlink" title="内嵌HTML标签"></a>内嵌HTML标签</h1><p>大意是说HTML的代码部分可以直接用到Markdown中，但使用时有一些注意事项，因本人并不懂HTML，故本部分跳过。</p>
+<br>
+
+<h1 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h1><ul>
+<li><a href="https://markdown.com.cn/basic-syntax/" title="Markdown语法入门">Markdown基本语法</a></li>
+<li><a href="https://blog.csdn.net/czg13548930186/article/details/72860942" title="输入法切换到全角">Markdown输入空格</a></li>
+<li><a href="https://blog.csdn.net/xapxxf/article/details/105133999" title="通过相对路径插入本地图片">Markdown插入本地图片</a></li>
+</ul>
 ]]></content>
       <categories>
         <category>Markdown</category>
