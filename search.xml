@@ -246,11 +246,9 @@
 <p>示例预览：<br>这是Markdown语法教程的地址： &lt;<a href="https://markdown.com.cn/">https://markdown.com.cn</a> &gt; 。</p>
 <h1 id="图片语法"><a href="#图片语法" class="headerlink" title="图片语法"></a>图片语法</h1><h2 id="插入本地图片"><a href="#插入本地图片" class="headerlink" title="插入本地图片"></a>插入本地图片</h2><p>格式：<code>![替代文本](图片的相对路径 &quot;图片标题&quot;)</code>，其中“替代文本”是图片失效时用于代替图片的文字，“图片标题”是鼠标悬停在图片上方时显示的文本。</p>
 <p>Markdown代码示例：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">![测试：插入本地图片](test.png &quot;测试：插入本地图片&quot;)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">适用于本地：![测试：插入本地图片](\Markdown学习笔记1\test.png &quot;测试：插入本地图片&quot;)</span><br><span class="line">使用于hexo blog：![测试：插入本地图片](test.png &quot;测试：插入本地图片&quot;)</span><br></pre></td></tr></table></figure>
 
-<p>示例预览：</p>
-<!-- ![测试：插入本地图片3](.\Markdown学习笔记1\test.png "测试：插入本地图片3") -->
-<p><img src="test2.png" alt="测试：插入本地图片2" title="测试：插入本地图片2"><br><img src=".%5CMarkdown%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01%5Ctest.png" alt="测试：插入本地图片" title="测试：插入本地图片"></p>
+<p>示例预览：<br>适用于本地：<img src=".%5CMarkdown%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01%5Ctest.png" alt="测试：插入本地图片" title="测试：插入本地图片"><br>适用于hexo blog：<img src="test.png" alt="测试：插入本地图片" title="测试：插入本地图片"></p>
 <h2 id="图片链接"><a href="#图片链接" class="headerlink" title="图片链接"></a>图片链接</h2><p>可以给图片增加链接，格式：<code>[![替代文本](图片的相对路径 &quot;图片标题&quot;)](超链接地址)</code>。</p>
 <h1 id="转义字符语法"><a href="#转义字符语法" class="headerlink" title="转义字符语法"></a>转义字符语法</h1><p>要显示原本用于控制文本格式的的字符（如无序列表的<code>-</code>和引用的<code>&gt;</code>），需在字符前添加<code>\</code>。</p>
 <p>Markdown代码示例：</p>
@@ -270,7 +268,7 @@
 <li><a href="https://markdown.com.cn/basic-syntax/" title="Markdown语法入门">Markdown基本语法</a></li>
 <li><a href="https://blog.csdn.net/czg13548930186/article/details/72860942" title="输入法切换到全角">Markdown输入空格</a></li>
 <li><a href="https://blog.csdn.net/xapxxf/article/details/105133999" title="通过相对路径插入本地图片">Markdown插入本地图片</a></li>
-<li><a href="">hexo blog插入图片</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/265077468" title="仅参考了前半部分">hexo blog插入图片</a></li>
 </ul>
 ]]></content>
       <categories>
