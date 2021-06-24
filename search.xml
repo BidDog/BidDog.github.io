@@ -248,7 +248,9 @@
 <p>Markdown代码示例：</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">![测试：插入本地图片](.\\IMG\\Test\test.png &quot;测试：插入本地图片&quot;)</span><br></pre></td></tr></table></figure>
 
-<p>示例预览：<br>![测试：插入本地图片](<!-- .\Markdown学习笔记1\ -->test.png “测试：插入本地图片”)</p>
+<p>示例预览：</p>
+<!-- ![测试：插入本地图片](.\Markdown学习笔记1\test.png "测试：插入本地图片") -->
+<p><img src="test.png" alt="测试：插入本地图片" title="测试：插入本地图片"></p>
 <h2 id="图片链接"><a href="#图片链接" class="headerlink" title="图片链接"></a>图片链接</h2><p>可以给图片增加链接，格式：<code>[![替代文本](图片的相对路径 &quot;图片标题&quot;)](超链接地址)</code>。</p>
 <h1 id="转义字符语法"><a href="#转义字符语法" class="headerlink" title="转义字符语法"></a>转义字符语法</h1><p>要显示原本用于控制文本格式的的字符（如无序列表的<code>-</code>和引用的<code>&gt;</code>），需在字符前添加<code>\</code>。</p>
 <p>Markdown代码示例：</p>
