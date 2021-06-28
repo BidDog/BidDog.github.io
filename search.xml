@@ -3,7 +3,7 @@
   <entry>
     <title>test0623</title>
     <url>/2021/06/23/test0623/</url>
-    <content><![CDATA[<p>置顶功能测试</p>
+    <content><![CDATA[<p>置顶功能测试。</p>
 <span id="more"></span>
 
 <p>第1次测试</p>
@@ -13,9 +13,9 @@
       </tags>
   </entry>
   <entry>
-    <title>Markdown学习笔记1</title>
-    <url>/2021/06/28/Markdown%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01/</url>
-    <content><![CDATA[<p>第1篇————基本语法。</p>
+    <title>Markdown基本语法</title>
+    <url>/2021/06/28/Markdown%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/</url>
+    <content><![CDATA[<p>介绍了使用Markdown做记录时会用到的基本语法。</p>
 <span id="more"></span>
 
 <p>本文导图：</p>
@@ -269,9 +269,9 @@
 <p>示例预览：<br>这是Markdown语法教程的地址： &lt;<a href="https://markdown.com.cn/">https://markdown.com.cn</a> &gt; 。</p>
 <h1 id="图片语法"><a href="#图片语法" class="headerlink" title="图片语法"></a>图片语法</h1><h2 id="插入本地图片"><a href="#插入本地图片" class="headerlink" title="插入本地图片"></a>插入本地图片</h2><p>格式：<code>![替代文本](图片的相对路径 &quot;图片标题&quot;)</code>，其中“替代文本”是图片失效时用于代替图片的文字，“图片标题”是鼠标悬停在图片上方时显示的文本。</p>
 <p>Markdown代码示例：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">适用于本地：![测试：插入本地图片](\Markdown学习笔记1\test.png &quot;测试：插入本地图片&quot;)</span><br><span class="line">使用于hexo blog：![测试：插入本地图片](test.png &quot;测试：插入本地图片&quot;)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">适用于本地：![测试：插入本地图片](\Markdown基本语法\test.png &quot;测试：插入本地图片&quot;)</span><br><span class="line">使用于hexo blog：![测试：插入本地图片](test.png &quot;测试：插入本地图片&quot;)</span><br></pre></td></tr></table></figure>
 
-<p>示例预览：<br>适用于本地：<br><img src=".%5CMarkdown%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01%5Ctest.png" alt="测试：插入本地图片" title="测试：插入本地图片"><br>适用于hexo blog：<br><img src="test.png" alt="测试：插入本地图片" title="测试：插入本地图片"></p>
+<p>示例预览：<br>适用于本地：<br><img src=".%5CMarkdown%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95%5Ctest.png" alt="测试：插入本地图片" title="测试：插入本地图片"><br>适用于hexo blog：<br><img src="test.png" alt="测试：插入本地图片" title="测试：插入本地图片"></p>
 <h2 id="图片链接"><a href="#图片链接" class="headerlink" title="图片链接"></a>图片链接</h2><p>可以给图片增加链接，格式：<code>[![替代文本](图片的相对路径 &quot;图片标题&quot;)](超链接地址)</code>。</p>
 <h1 id="转义字符语法"><a href="#转义字符语法" class="headerlink" title="转义字符语法"></a>转义字符语法</h1><p>要显示原本用于控制文本格式的的字符（如无序列表的<code>-</code>和引用的<code>&gt;</code>），需在字符前添加<code>\</code>。</p>
 <p>Markdown代码示例：</p>
@@ -526,16 +526,16 @@ graph LR
   <entry>
     <title>Qtranslate</title>
     <url>/2021/06/23/QTranslate/</url>
-    <content><![CDATA[<p>介绍翻译工具Qtranslate的用法（复制于软件介绍）</p>
+    <content><![CDATA[<p>介绍了翻译工具Qtranslate的用法（复制于软件介绍）。</p>
 <span id="more"></span>
 
 <p>QTranslate 版本 6.8.0.1</p>
 <p>全局快捷键（默认值）：<br>双击Ctrl =&gt; 显示主窗口（以及选定文本的译文）<br>Ctrl+Q =&gt; 翻译选定文本并显示在弹出窗口<br>Ctrl+Shift+Q =&gt; 显示词典窗口<br>Ctrl+E =&gt; 朗读选定文本</p>
-<p>主窗口快捷键：<br>Ctrl+Enter =&gt; 翻译文本<br>Ctrl+N =&gt; 清除当前翻译<br>Ctrl+D =&gt; 显示词典<br>Ctrl+Alt+1..9 =&gt; 用选定的第1<del>9个翻译服务显示词典<br>Ctrl+H =&gt; 显示翻译历史记录<br>Ctrl+K =&gt; 显示软键盘<br>Ctrl+Tab/Ctrl+Shift+Tab/Ctrl+1..9 =&gt; 切换到后一个/前一个/第1</del>9个翻译服务<br>Shift+Esc =&gt; 重设语言组合为自动检测<br>Ctrl+Shift+1..9 =&gt; 选择语言组合<br>Ctrl+I =&gt; 互换翻译方向<br>Ctrl+空格 =&gt; 显示 建议/自动完成 下拉菜单<br>F1 =&gt; 显示帮助<br>F11 =&gt; 打开/关闭全屏模式<br>Alt+左箭头 =&gt; 转到前一个翻译<br>Alt+右箭头 =&gt; 转到后一个翻译<br>Ctrl+上箭头 =&gt; 把翻译复制到文本输入框</p>
-<p>有三种鼠标选中文本的翻译模式：</p>
+<p>主窗口快捷键：<br>Ctrl+Enter =&gt; 翻译文本<br>Ctrl+N =&gt; 清除当前翻译<br>Ctrl+D =&gt; 显示词典<br>Ctrl+Alt+1..9 =&gt; 用选定的第1<del>9个翻译服务显示词典<br>Ctrl+H =&gt; 显示翻译历史记录<br>Ctrl+K =&gt; 显示软键盘<br>Ctrl+Tab/Ctrl+Shift+Tab/Ctrl+1..9 =&gt; 切换到后一个/前一个/第1</del>9个翻译服务<br>Shift+Esc =&gt; 重设语言组合为自动检测<br>Ctrl+Shift+1..9 =&gt; 选择语言组合<br>Ctrl+I =&gt; 互换翻译方向<br>Ctrl+空格 =&gt; 显示 建议/自动完成 下拉菜单<br>F1 =&gt; 显示帮助<br>F11 =&gt; 打开/关闭全屏模式<br>Alt+左箭头 =&gt; 转到前一个翻译<br>Alt+右箭头 =&gt; 转到后一个翻译<br>Ctrl+上箭头 =&gt; 把翻译复制到文本输入框  </p>
+<p>有三种鼠标选中文本的翻译模式：  </p>
 <ol>
-<li>显示图标（选择程序中的文本 - 本程序的图标会出现在鼠标指针附近。点击该图标，弹出窗口里就会显示选定文本的译文）；</li>
-<li>显示翻译（选择程序中的文本 - 选定文本的译文会立即在弹出窗口中出现）。</li>
+<li>显示图标（选择程序中的文本 - 本程序的图标会出现在鼠标指针附近。点击该图标，弹出窗口里就会显示选定文本的译文）；  </li>
+<li>显示翻译（选择程序中的文本 - 选定文本的译文会立即在弹出窗口中出现）。  </li>
 <li>显示翻译并朗读（前一种加上朗读选定的文本）。</li>
 </ol>
 <p>操作：</p>
