@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/dog-32x32.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/dog-16x16.ico">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/all.min.css" integrity="sha256-2H3fkXt6FEmrReK448mDVGKb3WW2ZZw35gI7vqHOE4Y=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"lliang.top","root":"/","images":"/images","scheme":"Gemini","version":"8.5.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":"ture","trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<meta name="description" content="摘录了VS code插件“Mermaid Markdown Syntax Highlighting”介绍中给出的示例。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mermaid的范例">
+<meta property="og:url" content="http://lliang.top/2021/06/27/Mermaid%E7%9A%84%E8%8C%83%E4%BE%8B/index.html">
+<meta property="og:site_name" content="雪亮的个人博客">
+<meta property="og:description" content="摘录了VS code插件“Mermaid Markdown Syntax Highlighting”介绍中给出的示例。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-06-27T07:00:00.000Z">
+<meta property="article:modified_time" content="2021-06-28T02:05:37.132Z">
+<meta property="article:author" content="雪亮">
+<meta property="article:tag" content="Markdown">
+<meta property="article:tag" content="Mermaid">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://lliang.top/2021/06/27/Mermaid%E7%9A%84%E8%8C%83%E4%BE%8B/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://lliang.top/2021/06/27/Mermaid%E7%9A%84%E8%8C%83%E4%BE%8B/","path":"2021/06/27/Mermaid的范例/","title":"Mermaid的范例"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Mermaid的范例 | 雪亮的个人博客</title>
+  
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">雪亮的个人博客</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">今天不学习，明天变垃圾；是学习赋予了我优雅从容的狗生</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Graph"><span class="nav-number">1.</span> <span class="nav-text">Graph</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Sequence"><span class="nav-number">2.</span> <span class="nav-text">Sequence</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Gantt"><span class="nav-number">3.</span> <span class="nav-text">Gantt</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Pie"><span class="nav-number">4.</span> <span class="nav-text">Pie</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Class-Diagram"><span class="nav-number">5.</span> <span class="nav-text">Class Diagram</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#State-Diagram"><span class="nav-number">6.</span> <span class="nav-text">State Diagram</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">7.</span> <span class="nav-text"></span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-overview">
+            <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">雪亮</p>
+  <div class="site-description" itemprop="description">本垃圾狗的狗窝</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+          </div>
+        </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://lliang.top/2021/06/27/Mermaid%E7%9A%84%E8%8C%83%E4%BE%8B/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="雪亮">
+      <meta itemprop="description" content="本垃圾狗的狗窝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="雪亮的个人博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Mermaid的范例
+        </h1>
+
+        <div class="post-meta-container">
+
+          <div class="post-meta">
+          </div>
+
+
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-06-27 15:00:00" itemprop="dateCreated datePublished" datetime="2021-06-27T15:00:00+08:00">2021-06-27</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2021-06-28 10:05:37" itemprop="dateModified" datetime="2021-06-28T10:05:37+08:00">2021-06-28</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Markdown/" itemprop="url" rel="index"><span itemprop="name">Markdown</span></a>
+        </span>
+    </span>
+
+  
+      </div>
+      <div class="post-meta">
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>8.5k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>8 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>摘录了VS code插件“Mermaid Markdown Syntax Highlighting”介绍中给出的示例。</p>
+<span id="more"></span>
+
+<h1 id="Graph"><a href="#Graph" class="headerlink" title="Graph"></a>Graph</h1><p>代码：  </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">```mermaid</span><br><span class="line">graph TB %% comments</span><br><span class="line">  %% Entity[Text]</span><br><span class="line">  ID-1[Node 1]</span><br><span class="line">  ID-2&gt;Node 2]</span><br><span class="line">  ID-3(Node 3 &lt;br&gt; text)</span><br><span class="line">  %% Entity--Entity</span><br><span class="line">  ID-1---ID-2</span><br><span class="line">  ID-1 --&gt; ID-3</span><br><span class="line">  %% Entity--Text--Entity</span><br><span class="line">  ID-2--Link between 2 and 3---ID-3</span><br><span class="line">  ID-3--&gt;|Action from 3 to 1|ID-1</span><br><span class="line">  ID-3 -- &quot;Action from 3 to 2. p/w: &#x27;_-!#$%^&amp;*+=?,\&#x27;&quot; --&gt; ID-2</span><br><span class="line">  %% Complex cases</span><br><span class="line">  A[Hard edge] --&gt;|Link text| B(Round edge)</span><br><span class="line">  ID-1---ID-2(Text)</span><br><span class="line">  B --&gt; C&#123;Text&#125;</span><br><span class="line">  C --&gt;|One| D[Text]</span><br><span class="line">  A(A) --&gt; B(B)</span><br><span class="line">  C[/C/] --&gt; D&gt;D]</span><br><span class="line">  %% class/classDef</span><br><span class="line">  classDef blue fill:#08f,stroke:#fff;</span><br><span class="line">  class ID-1 blue</span><br><span class="line">  class ID-1,ID-2 red</span><br><span class="line">  %% click</span><br><span class="line">  click ID-1 &quot;https://github.com&quot; &quot;Tooltip text&quot; %% comments</span><br><span class="line">  click ID-2 alert &quot;Tooltip for a callback&quot;</span><br><span class="line">  %% subgraph</span><br><span class="line">  subgraph A subgraph</span><br><span class="line">    ID-4&#123;Node 4&#125;</span><br><span class="line">    ID-5((fa:fa-spinner))</span><br><span class="line">    ID-6[&quot;Node 6 (same #quot;shape#quot;)&quot;]</span><br><span class="line">    ID-4-.-&gt;ID-5</span><br><span class="line">    ID-5 -. Action from 5 to 4 .-&gt; ID-4</span><br><span class="line">    ID-5==&gt;ID-6</span><br><span class="line">    ID-6 == Action from 6 to 5 ==&gt; ID-5</span><br><span class="line">  end</span><br><span class="line">```</span><br></pre></td></tr></table></figure>
+
+<p>代码效果：  </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">graph TB %% comments</span><br><span class="line">  %% Entity[Text]</span><br><span class="line">  ID-1[Node 1]</span><br><span class="line">  ID-2&gt;Node 2]</span><br><span class="line">  ID-3(Node 3 &lt;br&gt; text)</span><br><span class="line">  %% Entity--Entity</span><br><span class="line">  ID-1---ID-2</span><br><span class="line">  ID-1 --&gt; ID-3</span><br><span class="line">  %% Entity--Text--Entity</span><br><span class="line">  ID-2--Link between 2 and 3---ID-3</span><br><span class="line">  ID-3--&gt;|Action from 3 to 1|ID-1</span><br><span class="line">  ID-3 -- &quot;Action from 3 to 2. p/w: &#x27;_-!#$%^&amp;*+=?,\&#x27;&quot; --&gt; ID-2</span><br><span class="line">  %% Complex cases</span><br><span class="line">  A[Hard edge] --&gt;|Link text| B(Round edge)</span><br><span class="line">  ID-1---ID-2(Text)</span><br><span class="line">  B --&gt; C&#123;Text&#125;</span><br><span class="line">  C --&gt;|One| D[Text]</span><br><span class="line">  A(A) --&gt; B(B)</span><br><span class="line">  C[/C/] --&gt; D&gt;D]</span><br><span class="line">  %% class/classDef</span><br><span class="line">  classDef blue fill:#08f,stroke:#fff;</span><br><span class="line">  class ID-1 blue</span><br><span class="line">  class ID-1,ID-2 red</span><br><span class="line">  %% click</span><br><span class="line">  click ID-1 &quot;https://github.com&quot; &quot;Tooltip text&quot; %% comments</span><br><span class="line">  click ID-2 alert &quot;Tooltip for a callback&quot;</span><br><span class="line">  %% subgraph</span><br><span class="line">  subgraph A subgraph</span><br><span class="line">    ID-4&#123;Node 4&#125;</span><br><span class="line">    ID-5((fa:fa-spinner))</span><br><span class="line">    ID-6[&quot;Node 6 (same #quot;shape#quot;)&quot;]</span><br><span class="line">    ID-4-.-&gt;ID-5</span><br><span class="line">    ID-5 -. Action from 5 to 4 .-&gt; ID-4</span><br><span class="line">    ID-5==&gt;ID-6</span><br><span class="line">    ID-6 == Action from 6 to 5 ==&gt; ID-5</span><br><span class="line">  end</span><br></pre></td></tr></table></figure>
+
+<h1 id="Sequence"><a href="#Sequence" class="headerlink" title="Sequence"></a>Sequence</h1><p>代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">```mermaid</span><br><span class="line">sequenceDiagram %% diagram</span><br><span class="line">  autonumber</span><br><span class="line">  %% participant</span><br><span class="line">  participant Alice</span><br><span class="line">  participant B as Bob&lt;br&gt;Newline</span><br><span class="line">  participant C as Carol</span><br><span class="line">  %% arrows</span><br><span class="line">  B-&gt;C: Solid line without arrow</span><br><span class="line">  B--&gt;C: Dotted line without arrow</span><br><span class="line">  B-&gt;&gt;C:Solid line with arrowhead</span><br><span class="line">  B--&gt;&gt;C: Dotted line with arrowhead</span><br><span class="line">  B-)C: Solid line with Async arrow</span><br><span class="line">  B--)C: Dotted line with Async arrow</span><br><span class="line">  B-xC: Solid line with a cross at end</span><br><span class="line">  B--xC: Dotted line with a cross at end</span><br><span class="line">  %% activation, shorthand</span><br><span class="line">  activate Alice</span><br><span class="line">  B-&gt;&gt;+C: Arrow with + that activates Carol</span><br><span class="line">  C-&gt;&gt;-B: Arrow with - that deactivates Carol</span><br><span class="line">  deactivate Alice</span><br><span class="line">  %% notes</span><br><span class="line">  Note left of Alice: Alice likes to chat</span><br><span class="line">  Note over B,C: Bob whispers when sick</span><br><span class="line">  %% loop</span><br><span class="line">  loop Every minute</span><br><span class="line">    B--&gt;C: Can you hear me?</span><br><span class="line">  end</span><br><span class="line">  %% alt</span><br><span class="line">  alt is sick</span><br><span class="line">    B--&gt;C: Not so good :(</span><br><span class="line">  else is well</span><br><span class="line">    B-&gt;C: Feeling fresh like a daisy</span><br><span class="line">  end</span><br><span class="line">  opt Extra response</span><br><span class="line">    B-&gt;C: You, Carol?</span><br><span class="line">  end</span><br><span class="line">  %% par</span><br><span class="line">  par Action 1</span><br><span class="line">    B--&gt;C: I&#x27;m good</span><br><span class="line">  and Action 2</span><br><span class="line">    B-&gt;&gt;C: I&#x27;m better now</span><br><span class="line">  end</span><br><span class="line">  rect rgba(128, 128, 128, 0.5)</span><br><span class="line">    B-&gt;&gt;C: So colourful!</span><br><span class="line">  end</span><br><span class="line">```</span><br></pre></td></tr></table></figure>
+
+<p>代码效果：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">sequenceDiagram %% diagram</span><br><span class="line">  autonumber</span><br><span class="line">  %% participant</span><br><span class="line">  participant Alice</span><br><span class="line">  participant B as Bob&lt;br&gt;Newline</span><br><span class="line">  participant C as Carol</span><br><span class="line">  %% arrows</span><br><span class="line">  B-&gt;C: Solid line without arrow</span><br><span class="line">  B--&gt;C: Dotted line without arrow</span><br><span class="line">  B-&gt;&gt;C:Solid line with arrowhead</span><br><span class="line">  B--&gt;&gt;C: Dotted line with arrowhead</span><br><span class="line">  B-)C: Solid line with Async arrow</span><br><span class="line">  B--)C: Dotted line with Async arrow</span><br><span class="line">  B-xC: Solid line with a cross at end</span><br><span class="line">  B--xC: Dotted line with a cross at end</span><br><span class="line">  %% activation, shorthand</span><br><span class="line">  activate Alice</span><br><span class="line">  B-&gt;&gt;+C: Arrow with + that activates Carol</span><br><span class="line">  C-&gt;&gt;-B: Arrow with - that deactivates Carol</span><br><span class="line">  deactivate Alice</span><br><span class="line">  %% notes</span><br><span class="line">  Note left of Alice: Alice likes to chat</span><br><span class="line">  Note over B,C: Bob whispers when sick</span><br><span class="line">  %% loop</span><br><span class="line">  loop Every minute</span><br><span class="line">    B--&gt;C: Can you hear me?</span><br><span class="line">  end</span><br><span class="line">  %% alt</span><br><span class="line">  alt is sick</span><br><span class="line">    B--&gt;C: Not so good :(</span><br><span class="line">  else is well</span><br><span class="line">    B-&gt;C: Feeling fresh like a daisy</span><br><span class="line">  end</span><br><span class="line">  opt Extra response</span><br><span class="line">    B-&gt;C: You, Carol?</span><br><span class="line">  end</span><br><span class="line">  %% par</span><br><span class="line">  par Action 1</span><br><span class="line">    B--&gt;C: I&#x27;m good</span><br><span class="line">  and Action 2</span><br><span class="line">    B-&gt;&gt;C: I&#x27;m better now</span><br><span class="line">  end</span><br><span class="line">  rect rgba(128, 128, 128, 0.5)</span><br><span class="line">    B-&gt;&gt;C: So colourful!</span><br><span class="line">  end</span><br></pre></td></tr></table></figure>
+
+<h1 id="Gantt"><a href="#Gantt" class="headerlink" title="Gantt"></a>Gantt</h1><p>代码：  </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">```mermaid</span><br><span class="line">gantt %%comment</span><br><span class="line">  dateFormat  YYYY-MM-DD</span><br><span class="line">  axisFormat  %m/%d/%Y</span><br><span class="line">  title Adding GANTT diagram functionality to mermaid</span><br><span class="line">  section A section %%comment</span><br><span class="line">  Completed task            :done,    des1, 2014-01-06,2014-01-08</span><br><span class="line">  Active task               :active,  des2, 2014-01-09, 3d</span><br><span class="line">  Future task               :         des3, after des2, 5d %%comment</span><br><span class="line">  Future task2               :         des4, after des3, 5d</span><br><span class="line">  A task           :a1, 2014-01-01, 30d</span><br><span class="line">  section Critical tasks</span><br><span class="line">  Completed task in the critical line :crit, done, 2014-01-06,24h</span><br><span class="line">  Implement parser and jison          :crit, done, after des1, 2d</span><br><span class="line">  Create tests for parser             :crit, active, 3d</span><br><span class="line">  Future task in critical line        :crit, 5d</span><br><span class="line">  Create tests for renderer           :2d</span><br><span class="line">  Add to mermaid                      :1d</span><br><span class="line">```</span><br></pre></td></tr></table></figure>
+
+<p>代码效果：  </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">gantt %%comment</span><br><span class="line">  dateFormat  YYYY-MM-DD</span><br><span class="line">  axisFormat  %m/%d/%Y</span><br><span class="line">  title Adding GANTT diagram functionality to mermaid</span><br><span class="line">  section A section %%comment</span><br><span class="line">  Completed task            :done,    des1, 2014-01-06,2014-01-08</span><br><span class="line">  Active task               :active,  des2, 2014-01-09, 3d</span><br><span class="line">  Future task               :         des3, after des2, 5d %%comment</span><br><span class="line">  Future task2               :         des4, after des3, 5d</span><br><span class="line">  A task           :a1, 2014-01-01, 30d</span><br><span class="line">  section Critical tasks</span><br><span class="line">  Completed task in the critical line :crit, done, 2014-01-06,24h</span><br><span class="line">  Implement parser and jison          :crit, done, after des1, 2d</span><br><span class="line">  Create tests for parser             :crit, active, 3d</span><br><span class="line">  Future task in critical line        :crit, 5d</span><br><span class="line">  Create tests for renderer           :2d</span><br><span class="line">  Add to mermaid                      :1d</span><br></pre></td></tr></table></figure>
+
+<h1 id="Pie"><a href="#Pie" class="headerlink" title="Pie"></a>Pie</h1><p>代码：  </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">```mermaid</span><br><span class="line">pie</span><br><span class="line">    title Key elements in Product X</span><br><span class="line">    &quot;Calcium&quot; : 42.96</span><br><span class="line">    &quot;Potassium&quot; : 50.05</span><br><span class="line">    &quot;Magnesium&quot; : 10.01</span><br><span class="line">    &quot;Iron&quot; :  5</span><br><span class="line">```</span><br></pre></td></tr></table></figure>
+
+<p>代码效果：  </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">pie</span><br><span class="line">    title Key elements in Product X</span><br><span class="line">    &quot;Calcium&quot; : 42.96</span><br><span class="line">    &quot;Potassium&quot; : 50.05</span><br><span class="line">    &quot;Magnesium&quot; : 10.01</span><br><span class="line">    &quot;Iron&quot; :  5</span><br></pre></td></tr></table></figure>
+
+<h1 id="Class-Diagram"><a href="#Class-Diagram" class="headerlink" title="Class Diagram"></a>Class Diagram</h1><p>代码：  </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">```mermaid</span><br><span class="line">classDiagram</span><br><span class="line">  Animal &lt;|-- Duck : LabelText</span><br><span class="line">  class1 --o other</span><br><span class="line">  Animal --o Fish</span><br><span class="line">  Animal : +int age</span><br><span class="line">  Animal : +String gender</span><br><span class="line">  Animal: mate()</span><br><span class="line">  Animal : #method(param)* return</span><br><span class="line">  class Duck&#123;</span><br><span class="line">      %% Class Members</span><br><span class="line">      +String beakColor</span><br><span class="line">      #quack()</span><br><span class="line">  &#125;</span><br><span class="line">  class Fish&#123;</span><br><span class="line">      -abstractMethod()*</span><br><span class="line">      staticMethod()$</span><br><span class="line">  &#125;</span><br><span class="line">  %% Class member generics</span><br><span class="line">  class Square~Shape~&#123;</span><br><span class="line">      List~int~ position</span><br><span class="line">      setPoints(List~int~ points)</span><br><span class="line">      getPoints() List~int~</span><br><span class="line">  &#125;</span><br><span class="line">  Square : -List~string~ messages</span><br><span class="line">  Square : ~setMessages(List~string~ messages)</span><br><span class="line">  Square : +getMessages() List~string~</span><br><span class="line"></span><br><span class="line">  %% Multiplicity relations</span><br><span class="line">  Customer &quot;1&quot; --&gt; &quot;*&quot; Ticket</span><br><span class="line">  Student &quot;1&quot; --&gt; &quot;1..*&quot; Course</span><br><span class="line">  Galaxy --&gt; &quot;6&quot; Star : Contains</span><br><span class="line"></span><br><span class="line">  %% Annotations</span><br><span class="line">  class Annotate1</span><br><span class="line">  &lt;&lt;interface&gt;&gt; Animal</span><br><span class="line"></span><br><span class="line">  class Annotate2&#123;</span><br><span class="line">    &lt;&lt;Service&gt;&gt;</span><br><span class="line">  &#125;</span><br><span class="line">```</span><br></pre></td></tr></table></figure>
+
+<p>代码效果：  </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">classDiagram</span><br><span class="line">  Animal &lt;|-- Duck : LabelText</span><br><span class="line">  class1 --o other</span><br><span class="line">  Animal --o Fish</span><br><span class="line">  Animal : +int age</span><br><span class="line">  Animal : +String gender</span><br><span class="line">  Animal: mate()</span><br><span class="line">  Animal : #method(param)* return</span><br><span class="line">  class Duck&#123;</span><br><span class="line">      %% Class Members</span><br><span class="line">      +String beakColor</span><br><span class="line">      #quack()</span><br><span class="line">  &#125;</span><br><span class="line">  class Fish&#123;</span><br><span class="line">      -abstractMethod()*</span><br><span class="line">      staticMethod()$</span><br><span class="line">  &#125;</span><br><span class="line">  %% Class member generics</span><br><span class="line">  class Square~Shape~&#123;</span><br><span class="line">      List~int~ position</span><br><span class="line">      setPoints(List~int~ points)</span><br><span class="line">      getPoints() List~int~</span><br><span class="line">  &#125;</span><br><span class="line">  Square : -List~string~ messages</span><br><span class="line">  Square : ~setMessages(List~string~ messages)</span><br><span class="line">  Square : +getMessages() List~string~</span><br><span class="line"></span><br><span class="line">  %% Multiplicity relations</span><br><span class="line">  Customer &quot;1&quot; --&gt; &quot;*&quot; Ticket</span><br><span class="line">  Student &quot;1&quot; --&gt; &quot;1..*&quot; Course</span><br><span class="line">  Galaxy --&gt; &quot;6&quot; Star : Contains</span><br><span class="line"></span><br><span class="line">  %% Annotations</span><br><span class="line">  class Annotate1</span><br><span class="line">  &lt;&lt;interface&gt;&gt; Animal</span><br><span class="line"></span><br><span class="line">  class Annotate2&#123;</span><br><span class="line">    &lt;&lt;Service&gt;&gt;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="State-Diagram"><a href="#State-Diagram" class="headerlink" title="State Diagram"></a>State Diagram</h1><p>代码：  </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">```mermaid</span><br><span class="line">stateDiagram %%comment</span><br><span class="line">  s1</span><br><span class="line">  state &quot;Description with parenthesis&quot; as s2</span><br><span class="line">  s3 : Description with colon</span><br><span class="line"></span><br><span class="line">  s1 --&gt; s2</span><br><span class="line">  s2 --&gt; s3: Colon transition</span><br><span class="line">  [*] --&gt; s1 : Transition text</span><br><span class="line">  s3 --&gt; [*]</span><br><span class="line"></span><br><span class="line">  state NestedComposite &#123;</span><br><span class="line">      [*] --&gt; Nested</span><br><span class="line"></span><br><span class="line">      state Nested &#123;</span><br><span class="line">          [*] --&gt; second</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  %% comment here</span><br><span class="line">  state fork_state &lt;&lt;fork&gt;&gt;</span><br><span class="line">      [*] --&gt; fork_state</span><br><span class="line">      fork_state --&gt; State2</span><br><span class="line"></span><br><span class="line">      state join_state &lt;&lt;join&gt;&gt;</span><br><span class="line">      State2 --&gt; join_state</span><br><span class="line"></span><br><span class="line">  note right of State1</span><br><span class="line">    Important information! You can write</span><br><span class="line">    notes.</span><br><span class="line">  end note</span><br><span class="line">  note left of State2 : This is the note to the left.</span><br><span class="line"></span><br><span class="line">  %% concurrency</span><br><span class="line">  state Active &#123;</span><br><span class="line">      [*] --&gt; NumLockOff</span><br><span class="line">      NumLockOff --&gt; NumLockOn : EvNumLockPressed</span><br><span class="line">      NumLockOn --&gt; NumLockOff : EvNumLockPressed</span><br><span class="line">      --</span><br><span class="line">      [*] --&gt; CapsLockOff</span><br><span class="line">      CapsLockOff --&gt; CapsLockOn : EvCapsLockPressed</span><br><span class="line">      CapsLockOn --&gt; CapsLockOff : EvCapsLockPressed</span><br><span class="line">  &#125;</span><br><span class="line">```</span><br></pre></td></tr></table></figure>
+
+<p>代码效果：  </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">stateDiagram %%comment</span><br><span class="line">  s1</span><br><span class="line">  state &quot;Description with parenthesis&quot; as s2</span><br><span class="line">  s3 : Description with colon</span><br><span class="line"></span><br><span class="line">  s1 --&gt; s2</span><br><span class="line">  s2 --&gt; s3: Colon transition</span><br><span class="line">  [*] --&gt; s1 : Transition text</span><br><span class="line">  s3 --&gt; [*]</span><br><span class="line"></span><br><span class="line">  state NestedComposite &#123;</span><br><span class="line">      [*] --&gt; Nested</span><br><span class="line"></span><br><span class="line">      state Nested &#123;</span><br><span class="line">          [*] --&gt; second</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  %% comment here</span><br><span class="line">  state fork_state &lt;&lt;fork&gt;&gt;</span><br><span class="line">      [*] --&gt; fork_state</span><br><span class="line">      fork_state --&gt; State2</span><br><span class="line"></span><br><span class="line">      state join_state &lt;&lt;join&gt;&gt;</span><br><span class="line">      State2 --&gt; join_state</span><br><span class="line"></span><br><span class="line">  note right of State1</span><br><span class="line">    Important information! You can write</span><br><span class="line">    notes.</span><br><span class="line">  end note</span><br><span class="line">  note left of State2 : This is the note to the left.</span><br><span class="line"></span><br><span class="line">  %% concurrency</span><br><span class="line">  state Active &#123;</span><br><span class="line">      [*] --&gt; NumLockOff</span><br><span class="line">      NumLockOff --&gt; NumLockOn : EvNumLockPressed</span><br><span class="line">      NumLockOn --&gt; NumLockOff : EvNumLockPressed</span><br><span class="line">      --</span><br><span class="line">      [*] --&gt; CapsLockOff</span><br><span class="line">      CapsLockOff --&gt; CapsLockOn : EvCapsLockPressed</span><br><span class="line">      CapsLockOn --&gt; CapsLockOff : EvCapsLockPressed</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id=""><a href="#" class="headerlink" title=""></a></h1>
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Markdown/" rel="tag"># Markdown</a>
+              <a href="/tags/Mermaid/" rel="tag"># Mermaid</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2021/06/24/Markdown%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01/" rel="prev" title="Markdown学习笔记1">
+                  <i class="fa fa-chevron-left"></i> Markdown学习笔记1
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">雪亮</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+      <span>站点总字数：</span>
+    <span title="站点总字数">13k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span>站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">11 分钟</span>
+  </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>
