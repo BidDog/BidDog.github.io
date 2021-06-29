@@ -1,18 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>test0623</title>
-    <url>/2021/06/23/test0623/</url>
-    <content><![CDATA[<p>置顶功能测试。</p>
-<span id="more"></span>
-
-<p>第1次测试</p>
-]]></content>
-      <tags>
-        <tag>test</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Hexo+GitHub搭建个人blog</title>
     <url>/2021/06/28/hexo+github%E6%90%AD%E5%BB%BAblog/</url>
     <content><![CDATA[<p>介绍了此blog的搭建流程。</p>
@@ -105,6 +93,18 @@
       <tags>
         <tag>Hexo</tag>
         <tag>blog</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>test0623</title>
+    <url>/2021/06/23/test0623/</url>
+    <content><![CDATA[<p>置顶功能测试。</p>
+<span id="more"></span>
+
+<p>第1次测试</p>
+]]></content>
+      <tags>
+        <tag>test</tag>
       </tags>
   </entry>
   <entry>
