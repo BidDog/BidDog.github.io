@@ -253,15 +253,10 @@
     <url>/2021/06/29/Markdown%E5%85%AC%E5%BC%8F%E8%AF%AD%E6%B3%95/</url>
     <content><![CDATA[<p>介绍了Markdown中输入公式的基本方法。</p>
 <span id="more"></span>
-<h1 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h1><script type="math/tex; mode=display">
-1</script><script type="math/tex; mode=display">
-
-2</script><p>$\overbrace{y=x^2}$</p>
-<p>$y=x^2$</p>
-<script type="math/tex; mode=display">y=x^2 \tag{1}</script><script type="math/tex; mode=display">
-y=x^2</script><h1 id="插入公式语法"><a href="#插入公式语法" class="headerlink" title="插入公式语法"></a>插入公式语法</h1><p>分为行内公式和独行公式。</p>
+<h1 id="插入公式语法"><a href="#插入公式语法" class="headerlink" title="插入公式语法"></a>插入公式语法</h1><p>分为行内公式和独行公式。</p>
 <h2 id="行内公式"><a href="#行内公式" class="headerlink" title="行内公式"></a>行内公式</h2><p>方法：<code>$行内公式$</code></p>
 <h2 id="独行公式"><a href="#独行公式" class="headerlink" title="独行公式"></a>独行公式</h2><p>方法：<br><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$$</span><br><span class="line">独行公式</span><br><span class="line">$$</span><br></pre></td></tr></table></figure></p>
+<p><strong>注意：目前在作者使用Hexo搭建的Blog上块公式（即独行公式）不能被识别，网络中未找到解决方法，可能是个人问题。</strong></p>
 <h1 id="具体公式语法"><a href="#具体公式语法" class="headerlink" title="具体公式语法"></a>具体公式语法</h1><h2 id="上下标"><a href="#上下标" class="headerlink" title="上下标"></a>上下标</h2><ul>
 <li>上标：<code>^</code>，例如<code>$x^2$</code>表示$x^2$。  </li>
 <li>下标：<code>_</code>，例如<code>$x_2$</code>表示$x_2$。</li>
@@ -273,7 +268,8 @@ y=x^2</script><h1 id="插入公式语法"><a href="#插入公式语法" class="h
   <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$$</span><br><span class="line">y=x^2 \tag&#123;1&#125;</span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
 <p>  表示</p>
 <script type="math/tex; mode=display">
-  y=x^2 \tag{1}</script></li>
+  y=x^2 \tag{1}</script><p>  <strong>注意：此处的独行公式在Hexo Blog中未被显示。</strong></p>
+</li>
 <li><p>上大括号：<code>\overbrace&#123;&#125;</code>，例如<code>$\overbrace&#123;y=x^2&#125;$</code>表示$\overbrace{y=x^2}$。</p>
 </li>
 <li>下大括号：<code>\underbrace&#123;&#125;</code>,例如<code>$\underbrace&#123;y=x^2&#125;$</code>表示$\underbrace{y=x^2}$。</li>
