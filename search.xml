@@ -8,6 +8,7 @@
 
 <p>大致可以分为三步————Hexo建站、绑定域名和界面美化。  </p>
 <p><strong>注意：作者小白，此blog搭建流程参考于搜集到的网络信息，作者对涉及到的Hexo、GitHub和域名解析等都不懂，下文的含义简介均摘自网络。</strong><br><strong>注意：作者笔记本环境为win10。</strong></p>
+<hr>
 <h1 id="Hexo建站"><a href="#Hexo建站" class="headerlink" title="Hexo建站"></a>Hexo建站</h1><p>Hexo：快速、简介且高效的博客框架。</p>
 <h2 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a>安装Node.js</h2><p>Node.js：是一个基于Chrome V8 引擎的JavaScript运行环境。  </p>
 <ul>
@@ -82,6 +83,7 @@
 </li>
 </ol>
 <p>至此，Hexo建站工作完成，剩余绑定域名和Hexo主题美化。</p>
+<hr>
 <h1 id="绑定域名"><a href="#绑定域名" class="headerlink" title="绑定域名"></a>绑定域名</h1><p>作者是在Namesilo购买的域名。</p>
 <h2 id="在Namesilo购买域名"><a href="#在Namesilo购买域名" class="headerlink" title="在Namesilo购买域名"></a>在Namesilo购买域名</h2><h3 id="注册账号"><a href="#注册账号" class="headerlink" title="注册账号"></a>注册账号</h3><p>进入<a href="https://www.namesilo.com/">Namesilo</a>网站，点击右上角的<code>Login</code>进入账号注册界面，输入所有必要信息后，点击<code>Creat Account</code>完成账号注册。</p>
 <p><strong>注意：此时账号处于非激活状态，作者当时是在进行到付款操作的时候才提示进一步完善信息并接收验证码激活的。</strong></p>
@@ -126,6 +128,7 @@
 <h3 id="GitHub中添加自定义域名"><a href="#GitHub中添加自定义域名" class="headerlink" title="GitHub中添加自定义域名"></a>GitHub中添加自定义域名</h3><p>登录GitHub，点击右上角头像，选择<code>Your repositories</code>，点击仓库网址<code>xxxxxx.github.io</code>，点击<code>Settings</code>，点击<code>Pages</code>，在<code>Custom domain</code>文本框中输入购买的域名，点击<code>Save</code>，勾选<code>Enforce HTTPS</code>。</p>
 <p>生效后，界面中出现<code>√ Your site is published at https://xxxxxx/</code>，其中<code>xxxxxx</code>是购买的域名。</p>
 <p>完成以上操作后，就可以通过购买的域名访问自己的Blog了。</p>
+<hr>
 <h1 id="主题美化"><a href="#主题美化" class="headerlink" title="主题美化"></a>主题美化</h1><p>作者用到的部分设置。</p>
 <h2 id="修改主题"><a href="#修改主题" class="headerlink" title="修改主题"></a>修改主题</h2><p>将主题由默认修改为Next。</p>
 <h3 id="下载主题"><a href="#下载主题" class="headerlink" title="下载主题"></a>下载主题</h3><p>作者使用的是Next主题。</p>
@@ -170,7 +173,22 @@
 <p>在<code>主题配置文件</code>中修改部分信息：</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Local Search</span><br><span class="line"># Dependencies: https://github.com/next-theme/hexo-generator-searchdb</span><br><span class="line">local_search:</span><br><span class="line">  enable: ture</span><br><span class="line">  # If auto, trigger search by changing input.</span><br><span class="line">  # If manual, trigger search by pressing enter key or search button.</span><br><span class="line">  trigger: auto</span><br><span class="line">  # Show top n results per article, show all results by setting to -1</span><br><span class="line">  top_n_per_article: 1</span><br><span class="line">  # Unescape html strings to the readable one.</span><br><span class="line">  unescape: false</span><br><span class="line">  # Preload the search data when the page loads.</span><br><span class="line">  preload: false</span><br></pre></td></tr></table></figure>
 
+<h3 id="文章置顶"><a href="#文章置顶" class="headerlink" title="文章置顶"></a>文章置顶</h3><p>将文章置于网页的顶部。</p>
+<h4 id="安装插件-1"><a href="#安装插件-1" class="headerlink" title="安装插件"></a>安装插件</h4><p>在Git Bash中输入：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm uninstall hexo-generator-index --save</span><br><span class="line">npm install hexo-generator-index-pin-top --save</span><br></pre></td></tr></table></figure>
+
+<h4 id="修改配置文件"><a href="#修改配置文件" class="headerlink" title="修改配置文件"></a>修改配置文件</h4><p>文件目录：<code>/themes/next/layout/_macro/</code><br>文件名：<code>post.swig</code><br>打开文件后，搜索<code>&lt;div class=&quot;post-meta&quot;&gt;</code>，在第一个包含<code>span</code>单词的所在行的下方插入以下内容（注意缩进和对齐）：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% if post.top %&#125;</span><br><span class="line">    &lt;i class=&quot;fa fa-thumb-tack&quot;&gt;&lt;/i&gt;</span><br><span class="line">    &lt;font color=823935&gt;置顶&lt;/font&gt;</span><br><span class="line">    &lt;span class=&quot;post-meta-divider&quot;&gt;|&lt;/span&gt;</span><br><span class="line">&#123;% endif %&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
 <h3 id="等待更新"><a href="#等待更新" class="headerlink" title="等待更新"></a>等待更新</h3><p>…</p>
+<hr>
 <br>
 
 <h1 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h1><ul>
@@ -188,16 +206,6 @@
         <tag>Hexo</tag>
         <tag>blog</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>2</title>
-    <url>/2022/11/10/2/</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
-    <title>1</title>
-    <url>/2022/11/10/1/</url>
-    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>Markdown基本语法</title>
@@ -428,9 +436,9 @@
 <hr>
 <h1 id="图片语法"><a href="#图片语法" class="headerlink" title="图片语法"></a>图片语法</h1><h2 id="插入本地图片"><a href="#插入本地图片" class="headerlink" title="插入本地图片"></a>插入本地图片</h2><p>格式：<code>![替代文本](图片的相对路径 &quot;图片标题&quot;)</code>，其中<code>替代文本</code>是图片失效时用于代替图片的文本，<code>图片标题</code>是鼠标悬停在图片上方时显示的文本。</p>
 <p>Markdown语言：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">适用于本地： ![测试：插入客户端的图片](\Markdown的基本语法\客户端图片.png &quot;这是一张客户端的图片&quot;)</span><br><span class="line"></span><br><span class="line">适用于Hexo blog： ![测试：加入服务器端的图片](/images/服务器图片.png &quot;这是一张服务器端的图片&quot;)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">适用于本地： ![测试：插入客户端的图片](/图片/客户端图片.png &quot;这是一张客户端的图片&quot;)</span><br><span class="line"></span><br><span class="line">适用于Hexo blog： ![测试：加入服务器端的图片](/images/服务器图片.png &quot;这是一张服务器端的图片&quot;)</span><br></pre></td></tr></table></figure>
 
-<p>示例效果：<br>适用于本地： <img src="/%5CMarkdown%E7%9A%84%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95%5C%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%9B%BE%E7%89%87.png" alt="测试：插入客户端的图片" title="这是一张客户端的图片"></p>
+<p>示例效果：<br>适用于本地： <img src="/%E5%9B%BE%E7%89%87/%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%9B%BE%E7%89%87.png" alt="测试：插入客户端的图片" title="这是一张客户端的图片"></p>
 <p>适用于Hexo blog： <img src="/images/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%9B%BE%E7%89%87.png" alt="测试：加入服务器端的图片" title="这是一张服务器端的图片"></p>
 <h2 id="图片链接"><a href="#图片链接" class="headerlink" title="图片链接"></a>图片链接</h2><p>可以给图片增加链接，格式：<code>[![替代文本](图片的相对路径 &quot;图片标题&quot;)](超链接地址)</code>。</p>
 <hr>
