@@ -267,7 +267,7 @@
   <entry>
     <title>test1</title>
     <url>/2022/11/10/test1/</url>
-    <content><![CDATA[<p>插入图片啊喂！！！：<img src="/.top//11/10/test1/1.png" class title="tupian!!1"></p>
+    <content><![CDATA[<p>插入图片啊喂！！！：<br>111：<img src="/.top//1.png" alt="测试：加入服务器端的图片" title="这是一张服务器端的图片"></p>
 ]]></content>
   </entry>
 </search>
