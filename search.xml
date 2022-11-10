@@ -1,12 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>test1</title>
-    <url>/2022/11/10/test1/</url>
-    <content><![CDATA[<p>插入图片啊喂！！！：<br>111：<img src="/images/1.png" alt="测试：加入服务器端的图片" title="这是一张服务器端的图片"></p>
-]]></content>
-  </entry>
-  <entry>
     <title>Markdown基本语法</title>
     <url>/2022/11/10/Markdown%E7%9A%84%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/</url>
     <content><![CDATA[<p>介绍了使用Markdown做记录时会用到的基本语法。</p>
@@ -23,11 +17,11 @@
 </thead>
 <tbody><tr>
 <td><code>## 这是二级标题</code></td>
-<td><font size="5"><strong>这是二级标题</strong></font></td>
+<td><font size=5><strong>这是二级标题</strong></font></td>
 </tr>
 <tr>
 <td><code>###### 这是六级标题</code></td>
-<td><font size="2">这是六级标题</font></td>
+<td><font size=2>这是六级标题</font></td>
 </tr>
 </tbody></table>
 <p>注意：<code>#</code>后需要添加一个空格。<br>注意：共有6级标题。</p>
@@ -235,9 +229,10 @@
 <hr>
 <h1 id="图片语法"><a href="#图片语法" class="headerlink" title="图片语法"></a>图片语法</h1><h2 id="插入本地图片"><a href="#插入本地图片" class="headerlink" title="插入本地图片"></a>插入本地图片</h2><p>格式：<code>![替代文本](图片的相对路径 &quot;图片标题&quot;)</code>，其中<code>替代文本</code>是图片失效时用于代替图片的文本，<code>图片标题</code>是鼠标悬停在图片上方时显示的文本。</p>
 <p>Markdown语言：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">适用于本地： ![测试：插入客户端的图片](\Markdown的基本语法\客户端图片.png &quot;这是一张客户端的图片&quot;) 。  </span><br><span class="line">适用于Hexo blog： ![测试：加入服务器端的图片](服务器图片.png &quot;这是一张服务器端的图片&quot;) 。</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">适用于本地： ![测试：插入客户端的图片](\Markdown的基本语法\客户端图片.png &quot;这是一张客户端的图片&quot;)</span><br><span class="line"></span><br><span class="line">适用于Hexo blog： ![测试：加入服务器端的图片](/images/服务器图片.png &quot;这是一张服务器端的图片&quot;)</span><br></pre></td></tr></table></figure>
 
-<p>示例效果：<br>适用于本地： <img src="/.top//%5CMarkdown%E7%9A%84%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95%5C%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%9B%BE%E7%89%87.png" alt="测试：插入客户端的图片" title="这是一张客户端的图片"><br>适用于Hexo blog1： <img src="/.top//%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%9B%BE%E7%89%87.png" alt="测试：加入服务器端的图片" title="这是一张服务器端的图片"><br>适用于Hexo blog2： <img src="/.top//11/10/Markdown%E7%9A%84%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%9B%BE%E7%89%87.png" class title="这是一张服务器端的图片"></p>
+<p>示例效果：<br>适用于本地： <img src="/%5CMarkdown%E7%9A%84%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95%5C%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%9B%BE%E7%89%87.png" alt="测试：插入客户端的图片" title="这是一张客户端的图片"></p>
+<p>适用于Hexo blog： <img src="/images/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%9B%BE%E7%89%87.png" alt="测试：加入服务器端的图片" title="这是一张服务器端的图片"></p>
 <h2 id="图片链接"><a href="#图片链接" class="headerlink" title="图片链接"></a>图片链接</h2><p>可以给图片增加链接，格式：<code>[![替代文本](图片的相对路径 &quot;图片标题&quot;)](超链接地址)</code>。</p>
 <hr>
 <h1 id="转义字符语法"><a href="#转义字符语法" class="headerlink" title="转义字符语法"></a>转义字符语法</h1><p>要显示原本用于控制文本格式的字符（如创建无序列表时用到的<code>-</code>和创建引用时用到的<code>&gt;</code>），需在字符前添加<code>\</code>。</p>
