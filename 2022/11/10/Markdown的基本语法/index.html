@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/dog.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/dog-32x32.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/dog-16x16.ico">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"lliang.top","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":"ture","trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="介绍了使用Markdown做记录时会用到的基本语法。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Markdown基本语法">
+<meta property="og:url" content="http://lliang.top/2022/11/10/Markdown%E7%9A%84%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/index.html">
+<meta property="og:site_name" content="雪亮的个人博客">
+<meta property="og:description" content="介绍了使用Markdown做记录时会用到的基本语法。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://lliang.top/%5C%E5%9B%BE%E7%89%87%5C%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%9B%BE%E7%89%87.png">
+<meta property="og:image" content="http://lliang.top/%5C%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%9B%BE%E7%89%87.png">
+<meta property="article:published_time" content="2022-11-10T02:38:02.837Z">
+<meta property="article:modified_time" content="2022-11-10T02:45:38.684Z">
+<meta property="article:author" content="雪亮">
+<meta property="article:tag" content="Markdown">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://lliang.top/%5C%E5%9B%BE%E7%89%87%5C%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%9B%BE%E7%89%87.png">
+
+<link rel="canonical" href="http://lliang.top/2022/11/10/Markdown%E7%9A%84%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Markdown基本语法 | 雪亮的个人博客</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">雪亮的个人博客</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">今天不学习，明天变垃圾；是学习赋予了我优雅从容的狗生</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://lliang.top/2022/11/10/Markdown%E7%9A%84%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="雪亮">
+      <meta itemprop="description" content="本垃圾狗的狗窝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="雪亮的个人博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Markdown基本语法
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2022-11-10 10:38:02 / 修改时间：10:45:38" itemprop="dateCreated datePublished" datetime="2022-11-10T10:38:02+08:00">2022-11-10</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Markdown%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">Markdown学习</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>介绍了使用Markdown做记录时会用到的基本语法。</p>
+<span id="more"></span>
+
+<hr>
+<h1 id="标题语法"><a href="#标题语法" class="headerlink" title="标题语法"></a>标题语法</h1><p>添加<code>#</code>，实现标题。</p>
+<table>
+<thead>
+<tr>
+<th>Markdown语言</th>
+<th>预览效果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>## 这是二级标题</code></td>
+<td><font size=5><strong>这是二级标题</strong></font></td>
+</tr>
+<tr>
+<td><code>###### 这是六级标题</code></td>
+<td><font size=2>这是六级标题</font></td>
+</tr>
+</tbody></table>
+<p>注意：<code>#</code>后需要添加一个空格。<br>注意：共有6级标题。</p>
+<hr>
+<h1 id="换行语法"><a href="#换行语法" class="headerlink" title="换行语法"></a>换行语法</h1><p>在行尾添加“结尾空格”（在一行的末尾添加一个或者多个空格），或添加<code>&lt;br&gt;</code>，实现换行。</p>
+<table>
+<thead>
+<tr>
+<th>Markdown语言</th>
+<th>预览效果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>第1行。</code> <code> </code><br><code>第2行。</code></td>
+<td>第1行。<br>第2行。</td>
+</tr>
+<tr>
+<td><code>第1行。&lt;br&gt;</code><br><code>第2行。</code></td>
+<td>第1行。<br>第2行。</td>
+</tr>
+</tbody></table>
+<hr>
+<h1 id="换段语法"><a href="#换段语法" class="headerlink" title="换段语法"></a>换段语法</h1><p>添加1行空白行来开始下一段。</p>
+<table>
+<thead>
+<tr>
+<th>Markdown语言</th>
+<th>预览效果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>第1段第1行。</code> <code> </code><br><code>第1段第2行。</code><br><br><code>第2段第1行。</code> <code> </code><br><code>第2段第2行。</code></td>
+<td>第1段第1行。<br>第1段第2行。<br><br>第2段第1行。<br>第2段第2行。</td>
+</tr>
+</tbody></table>
+<hr>
+<h1 id="强调语法"><a href="#强调语法" class="headerlink" title="强调语法"></a>强调语法</h1><p>添加不同数量的<code>*</code>，可将文本设置为粗体或斜体。</p>
+<table>
+<thead>
+<tr>
+<th>Markdown语言</th>
+<th>预览效果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>**粗体**：你**好**啊</code></td>
+<td><strong>粗体</strong>：你<strong>好</strong>啊</td>
+</tr>
+<tr>
+<td><code>*斜体*：你*好*啊</code></td>
+<td><em>斜体</em>：你<em>好</em>啊</td>
+</tr>
+<tr>
+<td><code>***粗体+斜体***：你 ***好*** 啊</code></td>
+<td><em><strong>粗体+斜体</strong></em>：你 <em><strong>好</strong></em> 啊</td>
+</tr>
+</tbody></table>
+<hr>
+<h1 id="引用语法"><a href="#引用语法" class="headerlink" title="引用语法"></a>引用语法</h1><p>段落前添加<code>&gt;</code>，可创建块引用。</p>
+<h2 id="单个段落"><a href="#单个段落" class="headerlink" title="单个段落"></a>单个段落</h2><p>Markdown语言示例：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; 你好啊，我是赛利亚  </span><br><span class="line">滚，我是哥布林</span><br></pre></td></tr></table></figure>
+
+<p>注意1：<code>&gt;</code>后按个人习惯可选择是否添加一个空格。<br>注意2：示例的第一行有用于换行的结尾空格，下述示例同样。</p>
+<p>预览效果：</p>
+<blockquote>
+<p>你好啊，我是赛利亚<br>滚，我是哥布林</p>
+</blockquote>
+<h2 id="多个段落"><a href="#多个段落" class="headerlink" title="多个段落"></a>多个段落</h2><p>段落之间的空白行也添加<code>&gt;</code>。</p>
+<p>Markdown语言示例：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt; 你好啊，我是赛利亚。  </span><br><span class="line">滚，我是哥布林。</span><br><span class="line">&gt;</span><br><span class="line">&gt; 好小子，敢凶我，老娘要叫人了。  </span><br><span class="line">叫，我哥布林怕过谁。</span><br></pre></td></tr></table></figure>
+
+<p>预览效果：</p>
+<blockquote>
+<p>你好啊，我是赛利亚。<br>滚，我是哥布林。</p>
+<p>好小子，敢凶我，老娘要叫人了。<br>叫，我哥布林怕过谁。</p>
+</blockquote>
+<h2 id="嵌套"><a href="#嵌套" class="headerlink" title="嵌套"></a>嵌套</h2><p>在块引用中嵌套块引用，使用<code>&gt;&gt;</code>。</p>
+<p>Markdown语言示例：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&gt; 你好啊，我是赛利亚。  </span><br><span class="line">滚，我是哥布林。</span><br><span class="line">&gt;</span><br><span class="line">&gt; 好小子，敢凶我，来娘要叫人了。  </span><br><span class="line">叫，我哥布林怕不过。</span><br><span class="line">&gt;&gt; 李布林说过————狭路相逢勇者胜！</span><br><span class="line">&gt;</span><br><span class="line">&gt; 第二天，医院里多出了两位病人，一个叫神枪谁，一个叫鬼剑士。</span><br></pre></td></tr></table></figure>
+
+<p>示例效果：</p>
+<blockquote>
+<p>你好啊，我是赛利亚。<br>滚，我是哥布林。</p>
+<p>好小子，敢凶我，来娘要叫人了。<br>叫，我哥布林怕不过。</p>
+<blockquote>
+<p>李布林说过————狭路相逢勇者胜！</p>
+</blockquote>
+<p>第二天，医院里多出了两位病人，一个叫神枪谁，一个叫鬼剑士。</p>
+</blockquote>
+<h2 id="块引用中使用Markdown的其他元素"><a href="#块引用中使用Markdown的其他元素" class="headerlink" title="块引用中使用Markdown的其他元素"></a>块引用中使用Markdown的其他元素</h2><p>如添加粗体、斜体、代码、标题等。</p>
+<p>注意：不建议添加标题元素，会造成目录中的标题混乱。</p>
+<hr>
+<h1 id="列表语法"><a href="#列表语法" class="headerlink" title="列表语法"></a>列表语法</h1><p>分为有序列表和无序列表。</p>
+<h2 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h2><p>使用<code>数字</code>+<code>.</code>+<code>空格</code>创建有序列表，使用<code>Tab</code>缩进创建子列表。</p>
+<p>Markdown语言：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">1. 水果的营养</span><br><span class="line">2. 蔬菜的营养</span><br><span class="line">   1. 胡萝卜的营养</span><br><span class="line">   2. 大白菜的营养</span><br><span class="line">   3. 西红柿的营养</span><br><span class="line">   4. 西兰花的营养</span><br><span class="line">3. 肉类的营养</span><br></pre></td></tr></table></figure>
+
+<p>示例效果：</p>
+<ol>
+<li>水果的营养</li>
+<li>蔬菜的营养<ol>
+<li>胡萝卜的营养</li>
+<li>大白菜的营养</li>
+<li>西红柿的营养</li>
+<li>西兰花的营养</li>
+</ol>
+</li>
+<li>肉类的营养</li>
+</ol>
+<h2 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h2><p>使用<code>-</code>（或者<code>*</code>、<code>+</code>）+<code>空格</code>创建无序列表，使用<code>Tab</code>缩进创建子列表。</p>
+<p>Markdown语言：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">- 拿起筷子</span><br><span class="line">  - 眼看到筷子</span><br><span class="line">  - 手拿起筷子</span><br><span class="line">- 夹菜</span><br><span class="line">- 把菜放进嘴里</span><br></pre></td></tr></table></figure>
+
+<p>示例效果：</p>
+<ul>
+<li>拿起筷子<ul>
+<li>眼看到筷子</li>
+<li>手拿起筷子</li>
+</ul>
+</li>
+<li>夹菜</li>
+<li>把菜放进嘴里</li>
+</ul>
+<p>注意：不要将<code>-</code>、<code>*</code>、<code>+</code>混合使用（原因可能是改变符号被判定为换段）。</p>
+<h2 id="列表中嵌套其他元素"><a href="#列表中嵌套其他元素" class="headerlink" title="列表中嵌套其他元素"></a>列表中嵌套其他元素</h2><p>保留列表连续性的同时，嵌套其他元素，该元素前需添加4个<code>空格</code>（相当于1个<code>Tab</code>），不同元素间需用<code>空白行</code>分开。</p>
+<p>Markdown语言示例：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">1. 做饭，吃饭</span><br><span class="line">2. 洗碗，刷筷</span><br><span class="line"></span><br><span class="line">    &gt; 不做饭的人去洗碗，天经地义。————哥布迅</span><br><span class="line"></span><br><span class="line">3. 把碗放到柜子里</span><br><span class="line">4. 休息</span><br></pre></td></tr></table></figure>
+
+<p>示例效果：</p>
+<ol>
+<li><p>做饭，吃饭</p>
+</li>
+<li><p>洗碗，刷筷</p>
+<blockquote>
+<p>不做饭的人去洗碗，天经地义。————哥布迅</p>
+</blockquote>
+</li>
+<li><p>把碗放到柜子里</p>
+</li>
+<li><p>休息</p>
+</li>
+</ol>
+<p>上例为列表嵌套块引用的方法，嵌套段落、图片、列表、围栏代码块时方法同理。</p>
+<hr>
+<h1 id="代码语法"><a href="#代码语法" class="headerlink" title="代码语法"></a>代码语法</h1><p>使用<code>`</code>书写代码或代码块。</p>
+<h2 id="词汇或短句"><a href="#词汇或短句" class="headerlink" title="词汇或短句"></a>词汇或短句</h2><p>将文本放入<code>``</code>中。</p>
+<table>
+<thead>
+<tr>
+<th>Markdown语言</th>
+<th>示例效果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>Hexo上传文章的指令：`hexo d -g`</code></td>
+<td>Hexo上传文章的指令：<code>hexo d -g</code></td>
+</tr>
+</tbody></table>
+<h2 id="代码块"><a href="#代码块" class="headerlink" title="代码块"></a>代码块</h2><p>将代码块放入<code>``` ```</code>中。</p>
+<table>
+<thead>
+<tr>
+<th>Markdown语言</th>
+<th>示例效果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>```</code><br><code>hexo g</code><br><code>hexo d</code><br><code>```</code></td>
+<td><code>-hexo g</code><br><code>-hexo d</code></td>
+</tr>
+</tbody></table>
+<hr>
+<h1 id="分割线语法"><a href="#分割线语法" class="headerlink" title="分割线语法"></a>分割线语法</h1><p>使用<code>---</code>、<code>***</code>、<code>___</code>创建分割线。为了兼容性，前后均需添加<code>空白行</code>。</p>
+<p>Markdown语言：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"> </span><br><span class="line">---</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>示例效果：</p>
+<hr>
+<p>注意：没什么好注意的。</p>
+<hr>
+<h1 id="链接语法"><a href="#链接语法" class="headerlink" title="链接语法"></a>链接语法</h1><p>添加链接或网址。</p>
+<h2 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h2><p>格式：<code>[超链接显示名](超链接地址 &quot;超链接标题&quot;)</code>。其中<code>超链接显示名</code>是该链接在文章中显示的文本内容，<code>超链接标题</code>是鼠标悬停在超链接上时显示的内容。</p>
+<p>Markdown语言：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">学习Markdown请参考 [Markdown基本语法](https://markdown.com.cn/basic-syntax/ &quot;介绍了Markdown的基本语法&quot;) 。</span><br></pre></td></tr></table></figure>
+
+<p>示例效果：<br>学习Markdown请参考 <a target="_blank" rel="noopener" href="https://markdown.com.cn/basic-syntax/" title="介绍了Markdown的基本语法">Markdown基本语法</a> 。</p>
+<h2 id="格式化"><a href="#格式化" class="headerlink" title="格式化"></a>格式化</h2><p>可将链接设置为粗体、斜体，或将<code>超链接显示名</code>设置为代码。</p>
+<p>Markdown语言：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">学习Markdown请参考 ***[Mardown基本语法](https://markdown.com.cn/basic-syntax/ &quot;介绍了Markdown的基本语法&quot;)*** 。  </span><br><span class="line">学习Markdown请参考 [`Markdown基本语法`](https://markdown.com.cn/basic-syntax/ &quot;介绍了Markdown的基本语法&quot;) 。</span><br></pre></td></tr></table></figure>
+
+<p>示例效果：<br>学习Markdown请参考 <em><strong><a target="_blank" rel="noopener" href="https://markdown.com.cn/basic-syntax/" title="介绍了Markdown的基本语法">Mardown基本语法</a></strong></em> 。<br>学习Markdown请参考 <a target="_blank" rel="noopener" href="https://markdown.com.cn/basic-syntax/" title="介绍了Markdown的基本语法"><code>Markdown基本语法</code></a> 。</p>
+<h2 id="网址和Email地址"><a href="#网址和Email地址" class="headerlink" title="网址和Email地址"></a>网址和Email地址</h2><p>把URL放入<code>&lt;&gt;</code>中，使其变为可点击的链接。</p>
+<table>
+<thead>
+<tr>
+<th>Markdown语言</th>
+<th>示例效果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>这是Markdown语法教程的网址： &lt;https://markdown.com.cn&gt; 。</code></td>
+<td>这是Markdown语法教程的网址： <a target="_blank" rel="noopener" href="https://markdown.com.cn/">https://markdown.com.cn</a> 。</td>
+</tr>
+</tbody></table>
+<hr>
+<h1 id="图片语法"><a href="#图片语法" class="headerlink" title="图片语法"></a>图片语法</h1><h2 id="插入本地图片"><a href="#插入本地图片" class="headerlink" title="插入本地图片"></a>插入本地图片</h2><p>格式：<code>![替代文本](图片的相对路径 &quot;图片标题&quot;)</code>，其中<code>替代文本</code>是图片失效时用于代替图片的文本，<code>图片标题</code>是鼠标悬停在图片上方时显示的文本。</p>
+<p>Markdown语言：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">适用于本地： ![测试：插入客户端的图片](\图片\客户端图片.png &quot;这是一张客户端的图片&quot;) 。  </span><br><span class="line">适用于Hexo blog： ![测试：加入服务器端的图片](\图片\服务器图片.png &quot;这是一张服务器端的图片&quot;) 。</span><br></pre></td></tr></table></figure>
+
+<p>示例效果：<br>适用于本地： <img src="/%5C%E5%9B%BE%E7%89%87%5C%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%9B%BE%E7%89%87.png" alt="测试：插入客户端的图片" title="这是一张客户端的图片"><br>适用于Hexo blog： <img src="/%5C%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%9B%BE%E7%89%87.png" alt="测试：加入服务器端的图片" title="这是一张服务器端的图片"></p>
+<h2 id="图片链接"><a href="#图片链接" class="headerlink" title="图片链接"></a>图片链接</h2><p>可以给图片增加链接，格式：<code>[![替代文本](图片的相对路径 &quot;图片标题&quot;)](超链接地址)</code>。</p>
+<hr>
+<h1 id="转义字符语法"><a href="#转义字符语法" class="headerlink" title="转义字符语法"></a>转义字符语法</h1><p>要显示原本用于控制文本格式的字符（如创建无序列表时用到的<code>-</code>和创建引用时用到的<code>&gt;</code>），需在字符前添加<code>\</code>。</p>
+<p>Markdown语言：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt; 上山打老虎！</span><br><span class="line"></span><br><span class="line">\&gt; 打到小松鼠！</span><br></pre></td></tr></table></figure>
+
+<p>示例效果：</p>
+<blockquote>
+<p>上山打老虎！</p>
+</blockquote>
+<p>&gt; 打到小松鼠！</p>
+<p>如果没有<code>\</code>，那么<code>&gt;打到小松鼠！</code>中的<code>&gt;</code>将不会被显示，且<code>打到小松鼠！</code>将处于引用格式。</p>
+<h2 id="特殊字符自动转义"><a href="#特殊字符自动转义" class="headerlink" title="特殊字符自动转义"></a>特殊字符自动转义</h2><p>字符<code>&lt;</code>和<code>&amp;</code>，详情请查看 <a target="_blank" rel="noopener" href="https://markdown.com.cn/basic-syntax/escaping-characters.html" title="该页面下方有介绍到“特殊字符转义”">特殊字符转义</a> 。</p>
+<hr>
+<h1 id="内嵌HTML标签"><a href="#内嵌HTML标签" class="headerlink" title="内嵌HTML标签"></a>内嵌HTML标签</h1><p>大意是说HTML的代码部分可以直接用到Markdown中，但使用时有一些注意事项，因本人不懂HTML，故本部分跳过。</p>
+<hr>
+<br>
+
+<h1 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h1><ul>
+<li><a target="_blank" rel="noopener" href="https://markdown.com.cn/basic-syntax/" title="介绍了Markdown的基本语法">Markdown基本语法</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/czg13548930186/article/details/72860942" title="输入法切换到全角">Markdown输入空格</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/xapxxf/article/details/105133999" title="介绍了Markdown插入本地图片的方法">Markdown插入本地图片</a></li>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/265077468" title="参考了前半部分">Hexo blog插入图片</a></li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Markdown/" rel="tag"># Markdown</a>
+          </div>
+
+        
+
+
+        
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A0%87%E9%A2%98%E8%AF%AD%E6%B3%95"><span class="nav-number">1.</span> <span class="nav-text">标题语法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%8D%A2%E8%A1%8C%E8%AF%AD%E6%B3%95"><span class="nav-number">2.</span> <span class="nav-text">换行语法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%8D%A2%E6%AE%B5%E8%AF%AD%E6%B3%95"><span class="nav-number">3.</span> <span class="nav-text">换段语法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BC%BA%E8%B0%83%E8%AF%AD%E6%B3%95"><span class="nav-number">4.</span> <span class="nav-text">强调语法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BC%95%E7%94%A8%E8%AF%AD%E6%B3%95"><span class="nav-number">5.</span> <span class="nav-text">引用语法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%95%E4%B8%AA%E6%AE%B5%E8%90%BD"><span class="nav-number">5.1.</span> <span class="nav-text">单个段落</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%9A%E4%B8%AA%E6%AE%B5%E8%90%BD"><span class="nav-number">5.2.</span> <span class="nav-text">多个段落</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B5%8C%E5%A5%97"><span class="nav-number">5.3.</span> <span class="nav-text">嵌套</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9D%97%E5%BC%95%E7%94%A8%E4%B8%AD%E4%BD%BF%E7%94%A8Markdown%E7%9A%84%E5%85%B6%E4%BB%96%E5%85%83%E7%B4%A0"><span class="nav-number">5.4.</span> <span class="nav-text">块引用中使用Markdown的其他元素</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%88%97%E8%A1%A8%E8%AF%AD%E6%B3%95"><span class="nav-number">6.</span> <span class="nav-text">列表语法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%89%E5%BA%8F%E5%88%97%E8%A1%A8"><span class="nav-number">6.1.</span> <span class="nav-text">有序列表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%97%A0%E5%BA%8F%E5%88%97%E8%A1%A8"><span class="nav-number">6.2.</span> <span class="nav-text">无序列表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%97%E8%A1%A8%E4%B8%AD%E5%B5%8C%E5%A5%97%E5%85%B6%E4%BB%96%E5%85%83%E7%B4%A0"><span class="nav-number">6.3.</span> <span class="nav-text">列表中嵌套其他元素</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E8%AF%AD%E6%B3%95"><span class="nav-number">7.</span> <span class="nav-text">代码语法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%8D%E6%B1%87%E6%88%96%E7%9F%AD%E5%8F%A5"><span class="nav-number">7.1.</span> <span class="nav-text">词汇或短句</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E5%9D%97"><span class="nav-number">7.2.</span> <span class="nav-text">代码块</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%88%86%E5%89%B2%E7%BA%BF%E8%AF%AD%E6%B3%95"><span class="nav-number">8.</span> <span class="nav-text">分割线语法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%93%BE%E6%8E%A5%E8%AF%AD%E6%B3%95"><span class="nav-number">9.</span> <span class="nav-text">链接语法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%93%BE%E6%8E%A5"><span class="nav-number">9.1.</span> <span class="nav-text">链接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%BC%E5%BC%8F%E5%8C%96"><span class="nav-number">9.2.</span> <span class="nav-text">格式化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BD%91%E5%9D%80%E5%92%8CEmail%E5%9C%B0%E5%9D%80"><span class="nav-number">9.3.</span> <span class="nav-text">网址和Email地址</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9B%BE%E7%89%87%E8%AF%AD%E6%B3%95"><span class="nav-number">10.</span> <span class="nav-text">图片语法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8F%92%E5%85%A5%E6%9C%AC%E5%9C%B0%E5%9B%BE%E7%89%87"><span class="nav-number">10.1.</span> <span class="nav-text">插入本地图片</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%BE%E7%89%87%E9%93%BE%E6%8E%A5"><span class="nav-number">10.2.</span> <span class="nav-text">图片链接</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%BD%AC%E4%B9%89%E5%AD%97%E7%AC%A6%E8%AF%AD%E6%B3%95"><span class="nav-number">11.</span> <span class="nav-text">转义字符语法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%89%B9%E6%AE%8A%E5%AD%97%E7%AC%A6%E8%87%AA%E5%8A%A8%E8%BD%AC%E4%B9%89"><span class="nav-number">11.1.</span> <span class="nav-text">特殊字符自动转义</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%86%85%E5%B5%8CHTML%E6%A0%87%E7%AD%BE"><span class="nav-number">12.</span> <span class="nav-text">内嵌HTML标签</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E7%AB%A0"><span class="nav-number">13.</span> <span class="nav-text">参考文章</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">雪亮</p>
+  <div class="site-description" itemprop="description">本垃圾狗的狗窝</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">1</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">雪亮</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
