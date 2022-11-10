@@ -1,6 +1,195 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Hexo+GitHub搭建个人blog</title>
+    <url>/2022/11/10/hexo+github%E6%90%AD%E5%BB%BAblog/</url>
+    <content><![CDATA[<p>介绍了此blog的搭建流程。</p>
+<span id="more"></span>
+
+<p>大致可以分为三步————Hexo建站、绑定域名和界面美化。  </p>
+<p><strong>注意：作者小白，此blog搭建流程参考于搜集到的网络信息，作者对涉及到的Hexo、GitHub和域名解析等都不懂，下文的含义简介均摘自网络。</strong><br><strong>注意：作者笔记本环境为win10。</strong></p>
+<h1 id="Hexo建站"><a href="#Hexo建站" class="headerlink" title="Hexo建站"></a>Hexo建站</h1><p>Hexo：快速、简介且高效的博客框架。</p>
+<h2 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a>安装Node.js</h2><p>Node.js：是一个基于Chrome V8 引擎的JavaScript运行环境。  </p>
+<ul>
+<li>Node.js使用了一个事件驱动、非阻塞式I&#x2F;O的模型，使其轻量又高效。</li>
+<li>Node.js的包管理器npm，是全球最大的开源库生态系统。</li>
+</ul>
+<p>官网地址：<a href="http://nodejs.cn/" title="官网">Node.js中文网</a><br>官网地址的下载页面：<a href="http://nodejs.cn/download/" title="下载页面">下载|Node.js中文网</a></p>
+<p>打开官网下载页面，选择Windows安装包开始下载，下载完毕后打开，除安装目录自定义设置一路Next即可。</p>
+<h2 id="安装Git"><a href="#安装Git" class="headerlink" title="安装Git"></a>安装Git</h2><p>Git：是一个开源的分布式版本控制系统，用于敏捷高效地处理任何或小或大的项目。</p>
+<p>官网地址：<a href="https://git-scm.com/" title="官网">Git</a><br>官网地址的下载页面：<a href="https://git-scm.com/downloads" title="下载页面">Git-Downloads</a></p>
+<p>在下载页面选择Windows版本安装包，下载完毕后进行安装，作者是除目录和插件全选外，一路Next。<br>安装过程中各个选项的意思，可参考<a href="https://blog.csdn.net/mukes/article/details/115693833" title="Git安装介绍">Git详解安装步骤</a>。</p>
+<h2 id="GitHub初始化配置"><a href="#GitHub初始化配置" class="headerlink" title="GitHub初始化配置"></a>GitHub初始化配置</h2><h3 id="设置用户名和邮箱"><a href="#设置用户名和邮箱" class="headerlink" title="设置用户名和邮箱"></a>设置用户名和邮箱</h3><p>打开安装好的Git Bash，输入以下代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global user.name &quot;xxxxxx&quot;</span><br><span class="line">git config --global user.email &quot;xxxxxx@qq.com&quot;</span><br></pre></td></tr></table></figure>
+<p><strong>注意：<code>xxxxxx</code>是需要自己输入的内容。</strong></p>
+<h3 id="生成ssh密匙"><a href="#生成ssh密匙" class="headerlink" title="生成ssh密匙"></a>生成ssh密匙</h3><p>输入：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;xxxxxx@qq.com&quot;</span><br></pre></td></tr></table></figure>
+<p>输入完毕后，需要按下多次<code>Enter</code>键。</p>
+<h3 id="添加公匙到GitHub仓库"><a href="#添加公匙到GitHub仓库" class="headerlink" title="添加公匙到GitHub仓库"></a>添加公匙到GitHub仓库</h3><h4 id="查看公匙"><a href="#查看公匙" class="headerlink" title="查看公匙"></a>查看公匙</h4><p>输入：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cat ~/.ssh/id/rsa.pub</span><br></pre></td></tr></table></figure>
+<p>复制显示的公匙。</p>
+<h4 id="在GitHub仓库添加该公匙"><a href="#在GitHub仓库添加该公匙" class="headerlink" title="在GitHub仓库添加该公匙"></a>在GitHub仓库添加该公匙</h4><p>GitHub官网：<a href="https://github.com/">GitHub</a>  </p>
+<ol>
+<li>登录后，点击右上角的个人头像，菜单中选择<code>Settings</code>。</li>
+<li>网页跳转到个人账户设置界面，左侧的一列选项卡中，选择<code>SSH and GPG keys</code>，右侧界面中点击<code>New SSH key</code>。</li>
+<li>在Title文本框中随便输入一个标题，在Key文本框中，粘贴刚刚复制的公匙，点击<code>Add SSH key</code>。</li>
+</ol>
+<h4 id="在Git-Bash中测试公匙是否正常工作"><a href="#在Git-Bash中测试公匙是否正常工作" class="headerlink" title="在Git Bash中测试公匙是否正常工作"></a>在Git Bash中测试公匙是否正常工作</h4><p>返回Git Bash，输入：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
+<p>出现<code>Hey xxxxxx! You&#39;ve successfully authenticated, but GitHub does not \# provide shell access.</code>字样，表示公匙已正常工作。</p>
+<h2 id="GitHub中创建仓库"><a href="#GitHub中创建仓库" class="headerlink" title="GitHub中创建仓库"></a>GitHub中创建仓库</h2><ol>
+<li><p>在GitHub官网登录后，点击右上角个人头像左侧的<code>+</code>符号，菜单中选择<code>New repository</code>。</p>
+</li>
+<li><p>在Repository name文本框中输入<code>xxxxxx.github.io</code>。</p>
+<p> <strong>注意：<code>xxxxxx</code>必须是GitHub账号的用户名，不可随意填写。</strong></p>
+</li>
+<li><p>勾选<code>Add a README file</code>，其他保持默认，点击<code>Creat reponsitory</code>。</p>
+</li>
+</ol>
+<h2 id="Hexo搭建Blog"><a href="#Hexo搭建Blog" class="headerlink" title="Hexo搭建Blog"></a>Hexo搭建Blog</h2><h3 id="Hexo安装"><a href="#Hexo安装" class="headerlink" title="Hexo安装"></a>Hexo安装</h3><p>返回Git Bash，输入：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install -g hexo</span><br></pre></td></tr></table></figure>
+
+<h3 id="Hexo初始化"><a href="#Hexo初始化" class="headerlink" title="Hexo初始化"></a>Hexo初始化</h3><p>在想要的路径下新建一个文件夹，该文件夹作为Hexo博客的源文件保存的目录，比如我的是<code>D:\BigDog\Document\GitHub\hexo</code>。</p>
+<p>在Git Bash中输入：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd /d/BigDog/Document/GitHub/hexo</span><br><span class="line">hexo init</span><br></pre></td></tr></table></figure>
+
+<h4 id="本地预览"><a href="#本地预览" class="headerlink" title="本地预览"></a>本地预览</h4><p>在Git Bash中输入：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo generate # 生成页面</span><br><span class="line">hexo sever # 启动预览</span><br></pre></td></tr></table></figure>
+<p><strong>注意：此类命令均需在<code>D:\BigDog\Document\GitHub\hexo</code>目录下执行。</strong></p>
+<p>打开浏览器，访问<code>http://localhost:4000</code>，可以看到使用了默认主题的Hexo博客。</p>
+<h3 id="Hexo部署到GitHub"><a href="#Hexo部署到GitHub" class="headerlink" title="Hexo部署到GitHub"></a>Hexo部署到GitHub</h3><h4 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h4><p>Git Bash中输入：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+
+<h4 id="修改-config-yml文件"><a href="#修改-config-yml文件" class="headerlink" title="修改_config.yml文件"></a>修改<code>_config.yml</code>文件</h4><ol>
+<li><p>打开<code>D:\BigDog\Document\GitHub\hexo</code>目录下的<code>_config.yml</code>文件。</p>
+</li>
+<li><p>将<code>delpoy</code>部分的文本内容修改如下：</p>
+ <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repository: git@github.com:xxxxxx/xxxxxx.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+<p> <strong>注意：<code>xxxxxx</code>是GitHub账户的用户名。</strong><br> <strong>注意：注意空格和缩进。</strong></p>
+</li>
+</ol>
+<h4 id="执行部署"><a href="#执行部署" class="headerlink" title="执行部署"></a>执行部署</h4><p>Git Bash中输入：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo deploy # 部署到GitHub</span><br></pre></td></tr></table></figure>
+<p>此时，可通过浏览器访问<code>https://xxxxxx.github.io</code>进入到个人的Hexo博客中。</p>
+<h4 id="写文章"><a href="#写文章" class="headerlink" title="写文章"></a>写文章</h4><p>Git Bash中输入：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo new &quot;第一篇文章&quot;</span><br></pre></td></tr></table></figure>
+<ol>
+<li><p>通过该命令，Hexo会在<code>D:\BigDog\Document\GitHub\hexo</code>目录下的<code>\source\posts</code>文件夹中生成<code>.md</code>文件，打开该文件即可开始书写。</p>
+<p> <strong>注意：直接在该文件夹下创建<code>.md</code>文件，或从别处复制粘贴<code>.md</code>文件也是可以的。</strong></p>
+</li>
+<li><p>写完后，通过在Git Bash中输入<code>hexo deploy</code>指令，将文章部署到网页。</p>
+<p> <strong>注意：完成部署后，网页内容需等待一会儿才会更新，个人经验是0-3分钟。</strong></p>
+</li>
+</ol>
+<p>至此，Hexo建站工作完成，剩余绑定域名和Hexo主题美化。</p>
+<h1 id="绑定域名"><a href="#绑定域名" class="headerlink" title="绑定域名"></a>绑定域名</h1><p>作者是在Namesilo购买的域名。</p>
+<h2 id="在Namesilo购买域名"><a href="#在Namesilo购买域名" class="headerlink" title="在Namesilo购买域名"></a>在Namesilo购买域名</h2><h3 id="注册账号"><a href="#注册账号" class="headerlink" title="注册账号"></a>注册账号</h3><p>进入<a href="https://www.namesilo.com/">Namesilo</a>网站，点击右上角的<code>Login</code>进入账号注册界面，输入所有必要信息后，点击<code>Creat Account</code>完成账号注册。</p>
+<p><strong>注意：此时账号处于非激活状态，作者当时是在进行到付款操作的时候才提示进一步完善信息并接收验证码激活的。</strong></p>
+<h3 id="完成购买"><a href="#完成购买" class="headerlink" title="完成购买"></a>完成购买</h3><p>返回<a href="https://www.namesilo.com/">Namesilo主界面</a>，在网页中间的文本框中输入想要购买的域名，比如作者输入的<code>lliang</code>，然后点击右侧的<code>SEARCH DOMAIN</code>。</p>
+<p>等待界面完成刷新后，在显示出来的所有域名中，选择自己想要购买的，点击域名右侧的<code>add</code>，继续点击<code>Checkout</code>。</p>
+<p>在新页面中，<code>Auto-Renew</code>选择<code>No</code>，<code>Privacy Setting</code>选择<code>WHOIS Privacy</code>，<code>Set all years to</code>选择<code>1</code>，在<code>Have a Coupon or Promotion Code?</code>下的文本框中输入<code>okoff</code>或<code>go2think</code>并点击<code>Submit</code>。</p>
+<p>点击<code>CONTINUE--&gt;</code>，跳转到支付界面，使用支付宝完成购买。</p>
+<h2 id="在DNSPod解析域名"><a href="#在DNSPod解析域名" class="headerlink" title="在DNSPod解析域名"></a>在DNSPod解析域名</h2><h3 id="注册账号-1"><a href="#注册账号-1" class="headerlink" title="注册账号"></a>注册账号</h3><p>进入<a href="https://www.dnspod.cn/?s_url=https://www.dnspod.com/&lang=zh">DNSPod</a>，点击右上角的<code>免费注册</code>进入注册界面，填写信息完成注册。</p>
+<h3 id="添加域名"><a href="#添加域名" class="headerlink" title="添加域名"></a>添加域名</h3><p>注册完毕后进行登录，点击右上角的<code>管理控制台</code>，在新页面中点击左侧的<code>DNS解析</code>下的<code>我的域名</code>,点击页面中的<code>添加域名</code>，在文本框中输入在Namesilo中购买的域名，点击<code>确认</code>。</p>
+<h3 id="修改Namesilo中的NS记录"><a href="#修改Namesilo中的NS记录" class="headerlink" title="修改Namesilo中的NS记录"></a>修改Namesilo中的NS记录</h3><p>点击刚刚添加的域名，可看到DNSPod提供的两条默认的NS记录，记下这两条记录。</p>
+<p>登录Namesilo，点击右上角的头像，选择<code>My Account</code>，再点击右上角的<code>Manege My Domains</code>。</p>
+<p>勾选域名，点击页面中的<code>Change Nameservers</code>。</p>
+<p>在新页面中，删除<code>NameServer</code>文本框中原有的内容，填入刚刚记下的两条记录，点击<code>SUBMIT</code>。</p>
+<p><strong>注意：此操作需等待10分钟到48小时才会生效，作者大概等了10分钟就生效了。</strong><br><strong>注意：生效后，在<code>Manege My Domains</code>页面中，可以看到域名的<code>Status</code>一列显示为<code>Active</code>。</strong></p>
+<h3 id="在DNSPod中添加解析"><a href="#在DNSPod中添加解析" class="headerlink" title="在DNSPod中添加解析"></a>在DNSPod中添加解析</h3><p>在<code>DNSPod-管理控制台-DNS解析-我的域名</code>页面，点击已添加的域名，除默认存在的两条<code>NS</code>类型的记录外，再通过<code>添加记录</code>增加下述3条记录：</p>
+<table>
+<thead>
+<tr>
+<th><center> 主机记录 </center></th>
+<th><center> 记录类型 </center></th>
+<th><center> 记录值 </center></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>@</td>
+<td>A</td>
+<td>185.199.108.153</td>
+</tr>
+<tr>
+<td>@</td>
+<td>A</td>
+<td>185.199.110.153</td>
+</tr>
+<tr>
+<td>www</td>
+<td>CHAME</td>
+<td>xxxxxx.github.io</td>
+</tr>
+</tbody></table>
+<p><strong>注意：<code>xxxxxx.github.io</code>是GitHub账号的仓库网址,其中<code>xxxxxx</code>是GitHub账户名。</strong></p>
+<h3 id="本地添加CHAME文件"><a href="#本地添加CHAME文件" class="headerlink" title="本地添加CHAME文件"></a>本地添加CHAME文件</h3><p>在Hexo本地目录的<code>Source</code>文件夹中，新建名为<code>CHAME</code>的无后缀文件，文件中填写购买的域名。</p>
+<h3 id="GitHub中添加自定义域名"><a href="#GitHub中添加自定义域名" class="headerlink" title="GitHub中添加自定义域名"></a>GitHub中添加自定义域名</h3><p>登录GitHub，点击右上角头像，选择<code>Your repositories</code>，点击仓库网址<code>xxxxxx.github.io</code>，点击<code>Settings</code>，点击<code>Pages</code>，在<code>Custom domain</code>文本框中输入购买的域名，点击<code>Save</code>，勾选<code>Enforce HTTPS</code>。</p>
+<p>生效后，界面中出现<code>√ Your site is published at https://xxxxxx/</code>，其中<code>xxxxxx</code>是购买的域名。</p>
+<p>完成以上操作后，就可以通过购买的域名访问自己的Blog了。</p>
+<h1 id="主题美化"><a href="#主题美化" class="headerlink" title="主题美化"></a>主题美化</h1><p>作者用到的部分设置。</p>
+<h2 id="修改主题"><a href="#修改主题" class="headerlink" title="修改主题"></a>修改主题</h2><p>将主题由默认修改为Next。</p>
+<h3 id="下载主题"><a href="#下载主题" class="headerlink" title="下载主题"></a>下载主题</h3><p>作者使用的是Next主题。</p>
+<p>在Git Bash中输入指令：  </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd /d/BigDog/Document/Github/Hexo                       # 目录转到Hexo根目录</span><br><span class="line">git clone https://github.com/next-theme/theme-next-docs # 下载Next主题</span><br></pre></td></tr></table></figure>
+
+<h3 id="更新配置文件"><a href="#更新配置文件" class="headerlink" title="更新配置文件"></a>更新配置文件</h3><p>打开<code>D:\BigDog\Document\Github\Hexo</code>目录中的站点配置文件<code>_config.yml</code>，找到<code>theme</code>设置一行，将其修改为：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">theme: next</span><br></pre></td></tr></table></figure>
+
+<p><strong>注意：在<code>:</code>后存在一个空格。</strong></p>
+<h2 id="细节修改"><a href="#细节修改" class="headerlink" title="细节修改"></a>细节修改</h2><p>具体细节处的修改。</p>
+<h3 id="站点信息"><a href="#站点信息" class="headerlink" title="站点信息"></a>站点信息</h3><p>打开<code>D:\BigDog\Document\Github\Hexo</code>目录中的站点配置文件<code>_config.yml</code>，修改以下信息：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Site</span><br><span class="line">title: 雪亮的个人博客</span><br><span class="line">subtitle: 今天不学习，明天变垃圾；是学习赋予了我优雅从容的狗生</span><br><span class="line">description: 本垃圾狗的狗窝</span><br><span class="line">keywords: 关键字是个什么东西</span><br><span class="line">author: 雪亮</span><br><span class="line">language: zh-CN</span><br><span class="line">timezone: Asia/Shanghai</span><br><span class="line"></span><br><span class="line"># URL</span><br><span class="line">url: http://lliang.top</span><br></pre></td></tr></table></figure>
+
+<h3 id="新建tags页面"><a href="#新建tags页面" class="headerlink" title="新建tags页面"></a>新建tags页面</h3><p>即创建一个按标签对文章进行分类的页面。</p>
+<p>在Git Bash中输入指令：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo new page tags</span><br></pre></td></tr></table></figure>
+
+<p>打开目录<code>D:\BigDog\Document\Github\Hexo\source\tags</code>中的文件<code>index.md</code>，修改信息（时间随意修改）：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: 标签</span><br><span class="line">date: 2021-06-22 23:42:58</span><br><span class="line">type: &quot;tags&quot;</span><br><span class="line">comments: false</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+
+<h3 id="新建categories页面"><a href="#新建categories页面" class="headerlink" title="新建categories页面"></a>新建categories页面</h3><p>即创建一个文章分类的界面。</p>
+<p>在Git Bash中输入指令：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo new page categories</span><br></pre></td></tr></table></figure>
+
+<p>打开目录<code>D:\BigDog\Document\Github\Hexo\source\categories</code>中的文件<code>index.md</code>，修改信息（时间随意）：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: 文章分类</span><br><span class="line">date: 2021-06-22 23:46:16</span><br><span class="line">type: &quot;categories&quot;</span><br><span class="line">comments: false</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+
+<h3 id="增加文章检索功能"><a href="#增加文章检索功能" class="headerlink" title="增加文章检索功能"></a>增加文章检索功能</h3><p>即搜索功能。</p>
+<p>安装一个插件，在Git Bash中输入指令：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo-generator-searchdb --save</span><br></pre></td></tr></table></figure>
+
+<p><strong>注意：</strong></p>
+<ul>
+<li>目录<code>D:\BigDog\Document\Github\Hexo</code>中的文件<code>_config.yml</code>是站点配置文件；</li>
+<li>目录<code>D:\BigDog\Document\Github\Hexo\theme\next</code>中的文件<code>_config.yml</code>是主题配置文件；</li>
+<li><strong>后续以<code>站点配置文件</code>和<code>主题配置文件</code>对二者进行区分。</strong></li>
+</ul>
+<p>在<code>站点配置文件</code>末尾添加信息：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 本地搜索</span><br><span class="line">search:</span><br><span class="line">  path: search.xml</span><br><span class="line">  field: post</span><br><span class="line">  format: html</span><br><span class="line">  limit: 100</span><br></pre></td></tr></table></figure>
+
+<p>在<code>主题配置文件</code>中修改部分信息：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Local Search</span><br><span class="line"># Dependencies: https://github.com/next-theme/hexo-generator-searchdb</span><br><span class="line">local_search:</span><br><span class="line">  enable: ture</span><br><span class="line">  # If auto, trigger search by changing input.</span><br><span class="line">  # If manual, trigger search by pressing enter key or search button.</span><br><span class="line">  trigger: auto</span><br><span class="line">  # Show top n results per article, show all results by setting to -1</span><br><span class="line">  top_n_per_article: 1</span><br><span class="line">  # Unescape html strings to the readable one.</span><br><span class="line">  unescape: false</span><br><span class="line">  # Preload the search data when the page loads.</span><br><span class="line">  preload: false</span><br></pre></td></tr></table></figure>
+
+<h3 id="等待更新"><a href="#等待更新" class="headerlink" title="等待更新"></a>等待更新</h3><p>…</p>
+<br>
+
+<h1 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h1><ul>
+<li><a href="https://tding.top/archives/aad98408.html#more" title="主要参考到的文章，极少数信息已过期">Hexo搭建个人博客文章汇总</a></li>
+<li><a href="https://cloud.tencent.com/developer/article/1695555?from=article.detail.1173652" title="参考">低成本个人建站系列二————使用Hexo+GitHub搭建个人免费博客</a></li>
+<li><a href="https://blog.csdn.net/mukes/article/details/115693833" title="Git安装介绍">Git详解安装步骤</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/33921436" title="购买域名的教程">Namesilo域名购买及使用教程</a></li>
+<li><a href="https://theme-next.js.org/docs/getting-started/" title="Next官网的使用说明">Getting Started |Next</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>blog搭建</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>blog</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Markdown基本语法</title>
     <url>/2022/11/10/Markdown%E7%9A%84%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/</url>
     <content><![CDATA[<p>介绍了使用Markdown做记录时会用到的基本语法。</p>
@@ -229,7 +418,7 @@
 <hr>
 <h1 id="图片语法"><a href="#图片语法" class="headerlink" title="图片语法"></a>图片语法</h1><h2 id="插入本地图片"><a href="#插入本地图片" class="headerlink" title="插入本地图片"></a>插入本地图片</h2><p>格式：<code>![替代文本](图片的相对路径 &quot;图片标题&quot;)</code>，其中<code>替代文本</code>是图片失效时用于代替图片的文本，<code>图片标题</code>是鼠标悬停在图片上方时显示的文本。</p>
 <p>Markdown语言：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">适用于本地： ![测试：插入客户端的图片](\图片\客户端图片.png &quot;这是一张客户端的图片&quot;) 。  </span><br><span class="line">适用于Hexo blog： ![测试：加入服务器端的图片](\图片\服务器图片.png &quot;这是一张服务器端的图片&quot;) 。</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">适用于本地： ![测试：插入客户端的图片](\图片\客户端图片.png &quot;这是一张客户端的图片&quot;) 。  </span><br><span class="line">适用于Hexo blog： ![测试：加入服务器端的图片](服务器图片.png &quot;这是一张服务器端的图片&quot;) 。</span><br></pre></td></tr></table></figure>
 
 <p>示例效果：<br>适用于本地： <img src="/%5C%E5%9B%BE%E7%89%87%5C%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%9B%BE%E7%89%87.png" alt="测试：插入客户端的图片" title="这是一张客户端的图片"><br>适用于Hexo blog： <img src="/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%9B%BE%E7%89%87.png" alt="测试：加入服务器端的图片" title="这是一张服务器端的图片"></p>
 <h2 id="图片链接"><a href="#图片链接" class="headerlink" title="图片链接"></a>图片链接</h2><p>可以给图片增加链接，格式：<code>[![替代文本](图片的相对路径 &quot;图片标题&quot;)](超链接地址)</code>。</p>
@@ -262,195 +451,6 @@
       </categories>
       <tags>
         <tag>Markdown</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hexo+GitHub搭建个人blog</title>
-    <url>/2022/11/10/hexo+github%E6%90%AD%E5%BB%BAblog/</url>
-    <content><![CDATA[<p>介绍了此blog的搭建流程。</p>
-<span id="more"></span>
-
-<p>大致可以分为三步————Hexo建站、绑定域名和界面美化。  </p>
-<p><strong>注意：作者小白，此blog搭建流程参考于搜集到的网络信息，作者对涉及到的Hexo、GitHub和域名解析等都不懂，下文的含义简介均摘自网络。</strong><br><strong>注意：作者笔记本环境为win10。</strong></p>
-<h1 id="Hexo建站"><a href="#Hexo建站" class="headerlink" title="Hexo建站"></a>Hexo建站</h1><p>Hexo：快速、简介且高效的博客框架。</p>
-<h2 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a>安装Node.js</h2><p>Node.js：是一个基于Chrome V8 引擎的JavaScript运行环境。  </p>
-<ul>
-<li>Node.js使用了一个事件驱动、非阻塞式I&#x2F;O的模型，使其轻量又高效。</li>
-<li>Node.js的包管理器npm，是全球最大的开源库生态系统。</li>
-</ul>
-<p>官网地址：<a href="http://nodejs.cn/" title="官网">Node.js中文网</a><br>官网地址的下载页面：<a href="http://nodejs.cn/download/" title="下载页面">下载|Node.js中文网</a></p>
-<p>打开官网下载页面，选择Windows安装包开始下载，下载完毕后打开，除安装目录自定义设置一路Next即可。</p>
-<h2 id="安装Git"><a href="#安装Git" class="headerlink" title="安装Git"></a>安装Git</h2><p>Git：是一个开源的分布式版本控制系统，用于敏捷高效地处理任何或小或大的项目。</p>
-<p>官网地址：<a href="https://git-scm.com/" title="官网">Git</a><br>官网地址的下载页面：<a href="https://git-scm.com/downloads" title="下载页面">Git-Downloads</a></p>
-<p>在下载页面选择Windows版本安装包，下载完毕后进行安装，作者是除目录和插件全选外，一路Next。<br>安装过程中各个选项的意思，可参考<a href="https://blog.csdn.net/mukes/article/details/115693833" title="Git安装介绍">Git详解安装步骤</a>。</p>
-<h2 id="GitHub初始化配置"><a href="#GitHub初始化配置" class="headerlink" title="GitHub初始化配置"></a>GitHub初始化配置</h2><h3 id="设置用户名和邮箱"><a href="#设置用户名和邮箱" class="headerlink" title="设置用户名和邮箱"></a>设置用户名和邮箱</h3><p>打开安装好的Git Bash，输入以下代码：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global user.name &quot;xxxxxx&quot;</span><br><span class="line">git config --global user.email &quot;xxxxxx@qq.com&quot;</span><br></pre></td></tr></table></figure>
-<p><strong>注意：<code>xxxxxx</code>是需要自己输入的内容。</strong></p>
-<h3 id="生成ssh密匙"><a href="#生成ssh密匙" class="headerlink" title="生成ssh密匙"></a>生成ssh密匙</h3><p>输入：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;xxxxxx@qq.com&quot;</span><br></pre></td></tr></table></figure>
-<p>输入完毕后，需要按下多次<code>Enter</code>键。</p>
-<h3 id="添加公匙到GitHub仓库"><a href="#添加公匙到GitHub仓库" class="headerlink" title="添加公匙到GitHub仓库"></a>添加公匙到GitHub仓库</h3><h4 id="查看公匙"><a href="#查看公匙" class="headerlink" title="查看公匙"></a>查看公匙</h4><p>输入：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cat ~/.ssh/id/rsa.pub</span><br></pre></td></tr></table></figure>
-<p>复制显示的公匙。</p>
-<h4 id="在GitHub仓库添加该公匙"><a href="#在GitHub仓库添加该公匙" class="headerlink" title="在GitHub仓库添加该公匙"></a>在GitHub仓库添加该公匙</h4><p>GitHub官网：<a href="https://github.com/">GitHub</a>  </p>
-<ol>
-<li>登录后，点击右上角的个人头像，菜单中选择<code>Settings</code>。</li>
-<li>网页跳转到个人账户设置界面，左侧的一列选项卡中，选择<code>SSH and GPG keys</code>，右侧界面中点击<code>New SSH key</code>。</li>
-<li>在Title文本框中随便输入一个标题，在Key文本框中，粘贴刚刚复制的公匙，点击<code>Add SSH key</code>。</li>
-</ol>
-<h4 id="在Git-Bash中测试公匙是否正常工作"><a href="#在Git-Bash中测试公匙是否正常工作" class="headerlink" title="在Git Bash中测试公匙是否正常工作"></a>在Git Bash中测试公匙是否正常工作</h4><p>返回Git Bash，输入：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
-<p>出现<code>Hey xxxxxx! You&#39;ve successfully authenticated, but GitHub does not \# provide shell access.</code>字样，表示公匙已正常工作。</p>
-<h2 id="GitHub中创建仓库"><a href="#GitHub中创建仓库" class="headerlink" title="GitHub中创建仓库"></a>GitHub中创建仓库</h2><ol>
-<li><p>在GitHub官网登录后，点击右上角个人头像左侧的<code>+</code>符号，菜单中选择<code>New repository</code>。</p>
-</li>
-<li><p>在Repository name文本框中输入<code>xxxxxx.github.io</code>。</p>
-<p> <strong>注意：<code>xxxxxx</code>必须是GitHub账号的用户名，不可随意填写。</strong></p>
-</li>
-<li><p>勾选<code>Add a README file</code>，其他保持默认，点击<code>Creat reponsitory</code>。</p>
-</li>
-</ol>
-<h2 id="Hexo搭建Blog"><a href="#Hexo搭建Blog" class="headerlink" title="Hexo搭建Blog"></a>Hexo搭建Blog</h2><h3 id="Hexo安装"><a href="#Hexo安装" class="headerlink" title="Hexo安装"></a>Hexo安装</h3><p>返回Git Bash，输入：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install -g hexo</span><br></pre></td></tr></table></figure>
-
-<h3 id="Hexo初始化"><a href="#Hexo初始化" class="headerlink" title="Hexo初始化"></a>Hexo初始化</h3><p>在想要的路径下新建一个文件夹，该文件夹作为Hexo博客的源文件保存的目录，比如我的是<code>D:\BigDog\Document\GitHub\hexo</code>。</p>
-<p>在Git Bash中输入：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd /d/BigDog/Document/GitHub/hexo</span><br><span class="line">hexo init</span><br></pre></td></tr></table></figure>
-
-<h4 id="本地预览"><a href="#本地预览" class="headerlink" title="本地预览"></a>本地预览</h4><p>在Git Bash中输入：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo generate # 生成页面</span><br><span class="line">hexo sever # 启动预览</span><br></pre></td></tr></table></figure>
-<p><strong>注意：此类命令均需在<code>D:\BigDog\Document\GitHub\hexo</code>目录下执行。</strong></p>
-<p>打开浏览器，访问<code>http://localhost:4000</code>，可以看到使用了默认主题的Hexo博客。</p>
-<h3 id="Hexo部署到GitHub"><a href="#Hexo部署到GitHub" class="headerlink" title="Hexo部署到GitHub"></a>Hexo部署到GitHub</h3><h4 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h4><p>Git Bash中输入：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
-
-<h4 id="修改-config-yml文件"><a href="#修改-config-yml文件" class="headerlink" title="修改_config.yml文件"></a>修改<code>_config.yml</code>文件</h4><ol>
-<li><p>打开<code>D:\BigDog\Document\GitHub\hexo</code>目录下的<code>_config.yml</code>文件。</p>
-</li>
-<li><p>将<code>delpoy</code>部分的文本内容修改如下：</p>
- <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repository: git@github.com:xxxxxx/xxxxxx.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
-<p> <strong>注意：<code>xxxxxx</code>是GitHub账户的用户名。</strong><br> <strong>注意：注意空格和缩进。</strong></p>
-</li>
-</ol>
-<h4 id="执行部署"><a href="#执行部署" class="headerlink" title="执行部署"></a>执行部署</h4><p>Git Bash中输入：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo deploy # 部署到GitHub</span><br></pre></td></tr></table></figure>
-<p>此时，可通过浏览器访问<code>https://xxxxxx.github.io</code>进入到个人的Hexo博客中。</p>
-<h4 id="写文章"><a href="#写文章" class="headerlink" title="写文章"></a>写文章</h4><p>Git Bash中输入：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo new &quot;第一篇文章&quot;</span><br></pre></td></tr></table></figure>
-<ol>
-<li><p>通过该命令，Hexo会在<code>D:\BigDog\Document\GitHub\hexo</code>目录下的<code>\source\posts</code>文件夹中生成<code>.md</code>文件，打开该文件即可开始书写。</p>
-<p> <strong>注意：直接在该文件夹下创建<code>.md</code>文件，或从别处复制粘贴<code>.md</code>文件也是可以的。</strong></p>
-</li>
-<li><p>写完后，通过在Git Bash中输入<code>hexo deploy</code>指令，将文章部署到网页。</p>
-<p> <strong>注意：完成部署后，网页内容需等待一会儿才会更新，个人经验是0-3分钟。</strong></p>
-</li>
-</ol>
-<p>至此，Hexo建站工作完成，剩余绑定域名和Hexo主题美化。</p>
-<h1 id="绑定域名"><a href="#绑定域名" class="headerlink" title="绑定域名"></a>绑定域名</h1><p>作者是在Namesilo购买的域名。</p>
-<h2 id="在Namesilo购买域名"><a href="#在Namesilo购买域名" class="headerlink" title="在Namesilo购买域名"></a>在Namesilo购买域名</h2><h3 id="注册账号"><a href="#注册账号" class="headerlink" title="注册账号"></a>注册账号</h3><p>进入<a href="https://www.namesilo.com/">Namesilo</a>网站，点击右上角的<code>Login</code>进入账号注册界面，输入所有必要信息后，点击<code>Creat Account</code>完成账号注册。</p>
-<p><strong>注意：此时账号处于非激活状态，作者当时是在进行到付款操作的时候才提示进一步完善信息并接收验证码激活的。</strong></p>
-<h3 id="完成购买"><a href="#完成购买" class="headerlink" title="完成购买"></a>完成购买</h3><p>返回<a href="https://www.namesilo.com/">Namesilo主界面</a>，在网页中间的文本框中输入想要购买的域名，比如作者输入的<code>lliang</code>，然后点击右侧的<code>SEARCH DOMAIN</code>。</p>
-<p>等待界面完成刷新后，在显示出来的所有域名中，选择自己想要购买的，点击域名右侧的<code>add</code>，继续点击<code>Checkout</code>。</p>
-<p>在新页面中，<code>Auto-Renew</code>选择<code>No</code>，<code>Privacy Setting</code>选择<code>WHOIS Privacy</code>，<code>Set all years to</code>选择<code>1</code>，在<code>Have a Coupon or Promotion Code?</code>下的文本框中输入<code>okoff</code>或<code>go2think</code>并点击<code>Submit</code>。</p>
-<p>点击<code>CONTINUE--&gt;</code>，跳转到支付界面，使用支付宝完成购买。</p>
-<h2 id="在DNSPod解析域名"><a href="#在DNSPod解析域名" class="headerlink" title="在DNSPod解析域名"></a>在DNSPod解析域名</h2><h3 id="注册账号-1"><a href="#注册账号-1" class="headerlink" title="注册账号"></a>注册账号</h3><p>进入<a href="https://www.dnspod.cn/?s_url=https://www.dnspod.com/&lang=zh">DNSPod</a>，点击右上角的<code>免费注册</code>进入注册界面，填写信息完成注册。</p>
-<h3 id="添加域名"><a href="#添加域名" class="headerlink" title="添加域名"></a>添加域名</h3><p>注册完毕后进行登录，点击右上角的<code>管理控制台</code>，在新页面中点击左侧的<code>DNS解析</code>下的<code>我的域名</code>,点击页面中的<code>添加域名</code>，在文本框中输入在Namesilo中购买的域名，点击<code>确认</code>。</p>
-<h3 id="修改Namesilo中的NS记录"><a href="#修改Namesilo中的NS记录" class="headerlink" title="修改Namesilo中的NS记录"></a>修改Namesilo中的NS记录</h3><p>点击刚刚添加的域名，可看到DNSPod提供的两条默认的NS记录，记下这两条记录。</p>
-<p>登录Namesilo，点击右上角的头像，选择<code>My Account</code>，再点击右上角的<code>Manege My Domains</code>。</p>
-<p>勾选域名，点击页面中的<code>Change Nameservers</code>。</p>
-<p>在新页面中，删除<code>NameServer</code>文本框中原有的内容，填入刚刚记下的两条记录，点击<code>SUBMIT</code>。</p>
-<p><strong>注意：此操作需等待10分钟到48小时才会生效，作者大概等了10分钟就生效了。</strong><br><strong>注意：生效后，在<code>Manege My Domains</code>页面中，可以看到域名的<code>Status</code>一列显示为<code>Active</code>。</strong></p>
-<h3 id="在DNSPod中添加解析"><a href="#在DNSPod中添加解析" class="headerlink" title="在DNSPod中添加解析"></a>在DNSPod中添加解析</h3><p>在<code>DNSPod-管理控制台-DNS解析-我的域名</code>页面，点击已添加的域名，除默认存在的两条<code>NS</code>类型的记录外，再通过<code>添加记录</code>增加下述3条记录：</p>
-<table>
-<thead>
-<tr>
-<th><center> 主机记录 </center></th>
-<th><center> 记录类型 </center></th>
-<th><center> 记录值 </center></th>
-</tr>
-</thead>
-<tbody><tr>
-<td>@</td>
-<td>A</td>
-<td>185.199.108.153</td>
-</tr>
-<tr>
-<td>@</td>
-<td>A</td>
-<td>185.199.110.153</td>
-</tr>
-<tr>
-<td>www</td>
-<td>CHAME</td>
-<td>xxxxxx.github.io</td>
-</tr>
-</tbody></table>
-<p><strong>注意：<code>xxxxxx.github.io</code>是GitHub账号的仓库网址,其中<code>xxxxxx</code>是GitHub账户名。</strong></p>
-<h3 id="本地添加CHAME文件"><a href="#本地添加CHAME文件" class="headerlink" title="本地添加CHAME文件"></a>本地添加CHAME文件</h3><p>在Hexo本地目录的<code>Source</code>文件夹中，新建名为<code>CHAME</code>的无后缀文件，文件中填写购买的域名。</p>
-<h3 id="GitHub中添加自定义域名"><a href="#GitHub中添加自定义域名" class="headerlink" title="GitHub中添加自定义域名"></a>GitHub中添加自定义域名</h3><p>登录GitHub，点击右上角头像，选择<code>Your repositories</code>，点击仓库网址<code>xxxxxx.github.io</code>，点击<code>Settings</code>，点击<code>Pages</code>，在<code>Custom domain</code>文本框中输入购买的域名，点击<code>Save</code>，勾选<code>Enforce HTTPS</code>。</p>
-<p>生效后，界面中出现<code>√ Your site is published at https://xxxxxx/</code>，其中<code>xxxxxx</code>是购买的域名。</p>
-<p>完成以上操作后，就可以通过购买的域名访问自己的Blog了。</p>
-<h1 id="主题美化"><a href="#主题美化" class="headerlink" title="主题美化"></a>主题美化</h1><p>作者用到的部分设置。</p>
-<h2 id="修改主题"><a href="#修改主题" class="headerlink" title="修改主题"></a>修改主题</h2><p>将主题由默认修改为Next。</p>
-<h3 id="下载主题"><a href="#下载主题" class="headerlink" title="下载主题"></a>下载主题</h3><p>作者使用的是Next主题。</p>
-<p>在Git Bash中输入指令：  </p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd /d/BigDog/Document/Github/Hexo                       # 目录转到Hexo根目录</span><br><span class="line">git clone https://github.com/next-theme/theme-next-docs # 下载Next主题</span><br></pre></td></tr></table></figure>
-
-<h3 id="更新配置文件"><a href="#更新配置文件" class="headerlink" title="更新配置文件"></a>更新配置文件</h3><p>打开<code>D:\BigDog\Document\Github\Hexo</code>目录中的站点配置文件<code>_config.yml</code>，找到<code>theme</code>设置一行，将其修改为：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">theme: next</span><br></pre></td></tr></table></figure>
-
-<p><strong>注意：在<code>:</code>后存在一个空格。</strong></p>
-<h2 id="细节修改"><a href="#细节修改" class="headerlink" title="细节修改"></a>细节修改</h2><p>具体细节处的修改。</p>
-<h3 id="站点信息"><a href="#站点信息" class="headerlink" title="站点信息"></a>站点信息</h3><p>打开<code>D:\BigDog\Document\Github\Hexo</code>目录中的站点配置文件<code>_config.yml</code>，修改以下信息：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Site</span><br><span class="line">title: 雪亮的个人博客</span><br><span class="line">subtitle: 今天不学习，明天变垃圾；是学习赋予了我优雅从容的狗生</span><br><span class="line">description: 本垃圾狗的狗窝</span><br><span class="line">keywords: 关键字是个什么东西</span><br><span class="line">author: 雪亮</span><br><span class="line">language: zh-CN</span><br><span class="line">timezone: Asia/Shanghai</span><br><span class="line"></span><br><span class="line"># URL</span><br><span class="line">url: http://lliang.top</span><br></pre></td></tr></table></figure>
-
-<h3 id="新建tags页面"><a href="#新建tags页面" class="headerlink" title="新建tags页面"></a>新建tags页面</h3><p>即创建一个按标签对文章进行分类的页面。</p>
-<p>在Git Bash中输入指令：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo new page tags</span><br></pre></td></tr></table></figure>
-
-<p>打开目录<code>D:\BigDog\Document\Github\Hexo\source\tags</code>中的文件<code>index.md</code>，修改信息（时间随意修改）：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: 标签</span><br><span class="line">date: 2021-06-22 23:42:58</span><br><span class="line">type: &quot;tags&quot;</span><br><span class="line">comments: false</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-
-<h3 id="新建categories页面"><a href="#新建categories页面" class="headerlink" title="新建categories页面"></a>新建categories页面</h3><p>即创建一个文章分类的界面。</p>
-<p>在Git Bash中输入指令：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo new page categories</span><br></pre></td></tr></table></figure>
-
-<p>打开目录<code>D:\BigDog\Document\Github\Hexo\source\categories</code>中的文件<code>index.md</code>，修改信息（时间随意）：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: 文章分类</span><br><span class="line">date: 2021-06-22 23:46:16</span><br><span class="line">type: &quot;categories&quot;</span><br><span class="line">comments: false</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-
-<h3 id="增加文章检索功能"><a href="#增加文章检索功能" class="headerlink" title="增加文章检索功能"></a>增加文章检索功能</h3><p>即搜索功能。</p>
-<p>安装一个插件，在Git Bash中输入指令：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo-generator-searchdb --save</span><br></pre></td></tr></table></figure>
-
-<p><strong>注意：</strong></p>
-<ul>
-<li>目录<code>D:\BigDog\Document\Github\Hexo</code>中的文件<code>_config.yml</code>是站点配置文件；</li>
-<li>目录<code>D:\BigDog\Document\Github\Hexo\theme\next</code>中的文件<code>_config.yml</code>是主题配置文件；</li>
-<li><strong>后续以<code>站点配置文件</code>和<code>主题配置文件</code>对二者进行区分。</strong></li>
-</ul>
-<p>在<code>站点配置文件</code>末尾添加信息：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 本地搜索</span><br><span class="line">search:</span><br><span class="line">  path: search.xml</span><br><span class="line">  field: post</span><br><span class="line">  format: html</span><br><span class="line">  limit: 100</span><br></pre></td></tr></table></figure>
-
-<p>在<code>主题配置文件</code>中修改部分信息：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Local Search</span><br><span class="line"># Dependencies: https://github.com/next-theme/hexo-generator-searchdb</span><br><span class="line">local_search:</span><br><span class="line">  enable: ture</span><br><span class="line">  # If auto, trigger search by changing input.</span><br><span class="line">  # If manual, trigger search by pressing enter key or search button.</span><br><span class="line">  trigger: auto</span><br><span class="line">  # Show top n results per article, show all results by setting to -1</span><br><span class="line">  top_n_per_article: 1</span><br><span class="line">  # Unescape html strings to the readable one.</span><br><span class="line">  unescape: false</span><br><span class="line">  # Preload the search data when the page loads.</span><br><span class="line">  preload: false</span><br></pre></td></tr></table></figure>
-
-<h3 id="等待更新"><a href="#等待更新" class="headerlink" title="等待更新"></a>等待更新</h3><p>…</p>
-<br>
-
-<h1 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h1><ul>
-<li><a href="https://tding.top/archives/aad98408.html#more" title="主要参考到的文章，极少数信息已过期">Hexo搭建个人博客文章汇总</a></li>
-<li><a href="https://cloud.tencent.com/developer/article/1695555?from=article.detail.1173652" title="参考">低成本个人建站系列二————使用Hexo+GitHub搭建个人免费博客</a></li>
-<li><a href="https://blog.csdn.net/mukes/article/details/115693833" title="Git安装介绍">Git详解安装步骤</a></li>
-<li><a href="https://zhuanlan.zhihu.com/p/33921436" title="购买域名的教程">Namesilo域名购买及使用教程</a></li>
-<li><a href="https://theme-next.js.org/docs/getting-started/" title="Next官网的使用说明">Getting Started |Next</a></li>
-</ul>
-]]></content>
-      <categories>
-        <category>blog搭建</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-        <tag>blog</tag>
       </tags>
   </entry>
 </search>
